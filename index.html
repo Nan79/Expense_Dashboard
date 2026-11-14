@@ -109,6 +109,21 @@ tr.i td:first-child{padding-left:32px}
 .rail button small{font-size:.7rem;color:var(--muted)}.rail button:hover{background:var(--head)}
 .rail button.on{background:var(--sav);color:#fff}.rail button.on small{color:rgba(255,255,255,.88)}
 @media(max-width:900px){.ovwrap{grid-template-columns:1fr}.rail{order:-1;flex-direction:row;overflow-x:auto;top:58px;z-index:15;padding:6px}.rail::before{display:none}.rail button{flex:none}}
+.ia{display:flex;gap:8px;flex-wrap:wrap}.ia .pen{margin:0}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0 14px}
+.fl select{display:block;width:100%;margin-top:4px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
+.fchk{display:flex;align-items:center;gap:8px;font-size:.84rem;color:var(--muted);margin:10px 0 4px}
+.it th,.it td{text-align:center;padding:8px 6px}.it th:first-child,.it td:first-child{text-align:left;min-width:200px}.it td:first-child b{font-weight:600}
+.it small{display:block;color:var(--muted);font-size:.72rem;font-weight:400}
+.it th.cm,.it td.cm{background:rgba(47,109,246,.08)}
+.ck{width:28px;height:28px;border-radius:50%;border:2px solid var(--line);background:none;cursor:pointer;font:inherit;font-size:.8rem;font-weight:700;color:var(--muted);padding:0}
+.ck.paid{background:var(--good);border-color:var(--good);color:var(--card)}.ck.late{border-color:var(--bad);color:var(--bad)}.ck.due{border-color:var(--fix);color:var(--fix)}.ck.future{opacity:.5}
+.na0{color:var(--muted);opacity:.5}
+.pb{height:6px;background:var(--head);border-radius:4px;overflow:hidden;min-width:70px;width:100%}.pb i{display:block;height:100%;background:var(--good);border-radius:4px}
+.it td.pg{min-width:130px;white-space:normal}.it td.ac{white-space:nowrap}
+.it tr.tt td{font-weight:700;background:var(--head)}.it tr.tt2 td{font-weight:600;color:var(--good)}
+.wn{display:flex;gap:6px}.wn .pen{margin:0;padding:3px 10px}
+.kc .cr .pb{margin-top:2px}
 .pen.on{background:var(--sav);border-color:var(--sav);color:#fff}
 .add+.add{margin-left:6px}
 .add.on{background:var(--c);color:var(--card)}
@@ -135,6 +150,7 @@ thead th:nth-child(2),tbody td:nth-child(2){border-right:2px solid var(--muted)}
 <aside class="side"><div class="brand">💰 งบการเงิน</div>
 <button class="nv on" data-pg="ov"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg> ภาพรวม</button>
 <button class="nv" data-pg="plan"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg> แผนงบการเงิน</button>
+<button class="nv" data-pg="inst"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg> ตารางการผ่อน</button>
 <button class="nv" data-pg="set"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg> ตั้งค่า</button>
 <div class="sfoot"><span class="sd" id="sdot"></span><span id="sstat">ตรวจสอบการเชื่อมต่อ…</span></div></aside>
 <main class="wrap">
@@ -147,6 +163,21 @@ thead th:nth-child(2),tbody td:nth-child(2){border-right:2px solid var(--muted)}
 <div class="card"><h2>ตารางแผนงบรายรับรายจ่าย (บาท) <button id="edit" class="pen" title="แก้ไขข้อมูล" aria-label="แก้ไขข้อมูล"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg> แก้ไข</button></h2>
 <div class="scroll"><table id="tbl"></table></div>
 <div class="note">เดือนที่ยังไม่มีข้อมูลแสดงเป็น – ข้อมูลจากชีต “แผนงบการเงิน” · Working Day นับวันจันทร์–ศุกร์ ยังไม่หักวันหยุดนักขัตฤกษ์ · กด “แก้ไข” เพื่อพิมพ์ตัวเลขในตารางได้ทุกช่อง · กด + ที่หัวข้อแต่ละหมวดเพื่อเพิ่มรายการ กด − เพื่อแสดงไอคอนถังขยะในแต่ละแถวของหมวดนั้นแล้วกดลบ (บันทึกไว้ในเบราว์เซอร์นี้)</div></div>
+</section>
+<section id="pg-inst" hidden>
+<header><div><h1>ตารางการผ่อน</h1><div class="sub">บันทึกรายการผ่อนรายเดือน ติ๊กเมื่อชำระแล้ว และดูว่าภาระผ่อนจะลดลงเมื่อไหร่</div></div>
+<div class="ia"><button id="iadd" class="pen on">+ เพิ่มรายการผ่อน</button><button id="ipayall" class="pen">✓ ชำระเดือนนี้ทั้งหมด</button></div></header>
+<div class="card" id="ifm" hidden style="margin-bottom:14px"><h2 id="iftitle">เพิ่มรายการผ่อน</h2>
+<div class="fg"><label class="fl">ชื่อรายการ<input id="f-n" autocomplete="off" placeholder="เช่น ผ่อนมือถือ"></label>
+<label class="fl">ประเภท<select id="f-t"><option>รถยนต์</option><option>บ้าน/คอนโด</option><option>อุปกรณ์/สินค้า</option><option>บัตรเครดิต</option><option>สินเชื่อ</option><option>อื่นๆ</option></select></label>
+<label class="fl">ยอดผ่อนต่อเดือน (บาท)<input id="f-m" type="number" min="0" step="0.01" inputmode="decimal"></label>
+<label class="fl">เริ่มติดตามตั้งแต่เดือน<input id="f-s" type="month"></label>
+<label class="fl">งวดสุดท้าย (เดือน) · เว้นว่างถ้ายังไม่ทราบ<input id="f-e" type="month"></label>
+<label class="fl">วันที่ครบกำหนดชำระ (1–31) · ไม่บังคับ<input id="f-d" type="number" min="1" max="31" inputmode="numeric"></label></div>
+<label class="fchk" id="f-ppw"><input type="checkbox" id="f-pp" checked> ทำเครื่องหมายว่าชำระแล้วตั้งแต่เดือนเริ่มต้นถึงเดือนก่อนหน้า</label>
+<div id="f-err" class="note" style="color:var(--bad)"></div>
+<div class="cfgb"><button id="f-save" class="pen on">บันทึก</button><button id="f-cancel" class="pen">ยกเลิก</button></div></div>
+<div id="inst"></div>
 </section>
 <section id="pg-set" hidden>
 <header><div><h1>ตั้งค่า</h1><div class="sub">การเชื่อมต่อกับ Google Sheet ผ่าน Apps Script Web App</div></div></header>
@@ -245,7 +276,7 @@ function autoCur(){var sg=sigs();if(!PSIG){cur=latestMonth()}else{var ch=0;for(v
 function draw(){
  if(!T(cur)){cur=0;for(var q=11;q>=1;q--)if(T(q)){cur=q;break}}
  tabs.innerHTML='';[0].concat(M.map(function(_,i){return i}).filter(function(i){return i>0&&T(i)})).forEach(function(i){var b=document.createElement('button'),s1=document.createElement('span'),s2=document.createElement('small'),ti=T(i);b.className=i===cur?'on':'';s1.textContent=M[i];s2.textContent=i===0?'ตัวเลขแผน':'เหลือ ฿'+f0(ti?ti.rem:0);b.appendChild(s1);b.appendChild(s2);b.onclick=function(){cur=i;draw()};tabs.appendChild(b)});
- drawOv();
+ drawOv();renderInst();
  table();
 }
 function table(){
@@ -325,11 +356,11 @@ function parse(v){var ng=GK.map(function(k,i){return{k:k,n:GNm[i],r:[]}}),wd=[nu
  ng.forEach(function(g){if(!g.hdr||!g.sum||!g.r.length)throw{code:'bad_shape',message:'โครงสร้างชีตไม่ตรงกับที่คาดไว้ (หมวด '+g.n+')'}});
  return{g:ng,wd:wd}}
 function handleErr(e){var c=e&&e.code,m=(e&&e.message)||'';
- var t={network:'เชื่อมต่อ Apps Script ไม่ได้ ตรวจสอบว่า URL เป็นแบบ Web app ลงท้าย /exec และ Deploy ตั้ง Who has access เป็น Anyone (ไม่ใช่ Anyone with Google account)',bad_response:'Apps Script ตอบกลับผิดรูปแบบ ตรวจสอบว่า Deploy เป็น Web app และตั้งเข้าถึงเป็น “Anyone”',unauthorized:'Token ไม่ถูกต้อง ไปที่แท็บ “ตั้งค่า” เพื่อใส่ใหม่',no_token:'ฝั่ง Apps Script ยังไม่ได้ตั้ง token (รัน setupToken)',bad_shape:m||'โครงสร้างชีตไม่ตรงกับที่คาดไว้',cell_has_formula:'เซลล์นี้เป็นสูตร แก้ไขไม่ได้',server_error:'Apps Script แจ้งข้อผิดพลาด: '+m.slice(0,140),bad_request:'คำขอไม่ถูกต้อง: '+m.slice(0,140)}[c];
+ var t={network:'เชื่อมต่อ Apps Script ไม่ได้ ตรวจสอบว่า URL เป็นแบบ Web app ลงท้าย /exec และ Deploy ตั้ง Who has access เป็น Anyone (ไม่ใช่ Anyone with Google account)',bad_response:'Apps Script ตอบกลับผิดรูปแบบ ตรวจสอบว่า Deploy เป็น Web app และตั้งเข้าถึงเป็น “Anyone”',unauthorized:'Token ไม่ถูกต้อง ไปที่แท็บ “ตั้งค่า” เพื่อใส่ใหม่',no_token:'ฝั่ง Apps Script ยังไม่ได้ตั้ง token (รัน setupToken)',bad_shape:m||'โครงสร้างชีตไม่ตรงกับที่คาดไว้',bad_action:'Apps Script ยังเป็นเวอร์ชันเก่า (ไม่รองรับตารางผ่อน) วางโค้ด Code.gs ใหม่แล้ว Deploy แบบ New version',cell_has_formula:'เซลล์นี้เป็นสูตร แก้ไขไม่ได้',server_error:'Apps Script แจ้งข้อผิดพลาด: '+m.slice(0,140),bad_request:'คำขอไม่ถูกต้อง: '+m.slice(0,140)}[c];
  setSync('err',(t||'เกิดข้อผิดพลาด ('+(c||'unknown')+')')+(SHEET?'':' · แสดงข้อมูลสำรองในเบราว์เซอร์'))}
 function pull(quiet,keep){if(!ready())return Promise.resolve();if(!quiet)setSync('busy','กำลังดึงข้อมูลจาก Google Sheet…');
  return api('read').then(function(res){if(!Array.isArray(res.values))throw{code:'bad_shape',message:'อ่านข้อมูลจากชีตไม่ได้'};
-  var o=parse(res.values);G=o.g;WD=o.wd;SHEET=true;if(!PULLED){PSIG=null;PULLED=true}autoCur();draw();if(!keep)setSync('ok','เชื่อมต่อ Google Sheet แล้ว · อัปเดตล่าสุด '+hhmm());return true}).catch(function(e){handleErr(e);return false})}
+  var o=parse(res.values);G=o.g;WD=o.wd;SHEET=true;if(!PULLED){PSIG=null;PULLED=true}autoCur();draw();if(!pend)instPull();if(!keep)setSync('ok','เชื่อมต่อ Google Sheet แล้ว · อัปเดตล่าสุด '+hhmm());return true}).catch(function(e){handleErr(e);return false})}
 function enq(fn,after){pend++;setSync('busy','กำลังบันทึกลง Google Sheet…');
  Q=Q.then(fn).then(function(){pend--;return after?after():null}).then(function(){if(!pend)setSync('ok','บันทึกลง Google Sheet แล้ว · '+hhmm())},function(e){pend--;handleErr(e);return pull(true,true)});return Q}
 function sheetSet(a1,val){enq(function(){return api('setCell',{a1:a1,value:val})})}
@@ -353,10 +384,91 @@ function mirror(k,m){var d=document.getElementById('sdot'),t=document.getElement
  if(d)d.className='sd '+k;
  if(t)t.textContent=({ok:'เชื่อมต่อ Google Sheet แล้ว',busy:'กำลังซิงค์…',err:'มีข้อผิดพลาดในการเชื่อมต่อ'})[k]||'ยังไม่ได้เชื่อมต่อ';
  if(c)c.className='sync '+k;if(cm)cm.textContent=m}
-function showPage(p){if(p==='set'&&typeof CFG!=='undefined'&&document.getElementById('cfgurl')){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token}document.getElementById('pg-ov').hidden=p!=='ov';document.getElementById('pg-plan').hidden=p!=='plan';document.getElementById('pg-set').hidden=p!=='set';
+function showPage(p){if(p==='set'&&typeof CFG!=='undefined'&&document.getElementById('cfgurl')){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token}document.getElementById('pg-ov').hidden=p!=='ov';document.getElementById('pg-plan').hidden=p!=='plan';document.getElementById('pg-set').hidden=p!=='set';document.getElementById('pg-inst').hidden=p!=='inst';
  [].forEach.call(document.querySelectorAll('.nv'),function(b){b.className='nv'+(b.dataset.pg===p?' on':'')});window.scrollTo(0,0)}
 [].forEach.call(document.querySelectorAll('.nv'),function(b){b.onclick=function(){showPage(b.dataset.pg)}});
 var cr=document.getElementById('cfgrefresh');if(cr)cr.onclick=function(){if(!pend)pull(false)};
+
+var ISYNC=false,IT=[],IWIN='2026-08',IEDIT=null,IARM=null,INOW=(function(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)})(),ICOL=['#2f6df6','#e08a00','#e11d74','#16a34a','#8b5cf6','#0ea5a5','#f97316','#64748b'];
+function ymL(ym){var p=ym.split('-');return THM[+p[1]-1]+' '+String((+p[0]+543)%100)}
+function addM(ym,k){var p=ym.split('-'),n=+p[0]*12+(+p[1]-1)+k;return Math.floor(n/12)+'-'+('0'+(n%12+1)).slice(-2)}
+function monthsBetween(a,b){var o=[];for(var k=a;k<=b&&o.length<600;k=addM(k,1))o.push(k);return o}
+function inTerm(x,ym){return ym>=x.s&&(!x.e||ym<=x.e)}
+function stOf(x,ym){if(!inTerm(x,ym))return'na';if(x.p[ym])return'paid';if(ym<INOW)return'late';if(ym===INOW)return(x.d&&new Date().getDate()>x.d)?'late':'due';return'future'}
+function isave(){try{localStorage.setItem('fin-inst',JSON.stringify({it:IT,w:IWIN}))}catch(e){}if(ISYNC)enq(function(){return api('instSave',{items:IT})})}
+function pm(a,b){var o={};monthsBetween(a,b).forEach(function(k){o[k]=1});return o}
+function iload(){var ok=false;try{var o=JSON.parse(localStorage.getItem('fin-inst')||'null');if(o&&Array.isArray(o.it)){IT=o.it;if(o.w)IWIN=o.w;ok=true}}catch(e){}
+ if(!ok)IT=[{id:1,n:'ผ่อนรถยนต์',t:'รถยนต์',m:8200,s:'2026-08',e:'',d:0,p:pm('2026-08','2026-09')},{id:2,n:'ผ่อน Acer',t:'อุปกรณ์/สินค้า',m:1599,s:'2026-08',e:'2027-01',d:0,p:pm('2026-08','2026-09')},{id:3,n:'ผ่อน HP',t:'อุปกรณ์/สินค้า',m:2749,s:'2026-08',e:'2027-03',d:0,p:pm('2026-08','2026-09')},{id:4,n:'Apple',t:'อื่นๆ',m:99,s:'2026-08',e:'',d:0,p:pm('2026-08','2026-09')}];
+ if(INOW<IWIN||INOW>addM(IWIN,11))IWIN=addM(INOW,-2)}
+function iinfo(x){var tot=0,paid=0;if(x.e){monthsBetween(x.s,x.e).forEach(function(k){tot++;if(x.p[k])paid++})}else{Object.keys(x.p).forEach(function(k){if(x.p[k]&&k>=x.s)paid++})}return{tot:tot,paid:paid,rem:x.e?tot-paid:null}}
+function instChart(W){var Wd=560,H=230,pl=40,pr=8,pt=16,pb=26,iw=Wd-pl-pr,ih=H-pt-pb,tots=W.map(function(k){return IT.reduce(function(a,x){return a+(inTerm(x,k)?x.m:0)},0)}),mx=Math.max.apply(null,tots.concat([1])),gw=iw/W.length,bw=Math.min(38,gw*.66),o='<svg class="ch-svg" viewBox="0 0 '+Wd+' '+H+'">';
+ for(var g=0;g<=4;g++){var yy=pt+ih*(1-g/4);o+='<line x1="'+pl+'" x2="'+(Wd-pr)+'" y1="'+yy+'" y2="'+yy+'" stroke="var(--line)"/><text x="'+(pl-6)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+fm(mx*g/4)+'</text>'}
+ W.forEach(function(k,i){var cx=pl+gw*i+gw/2,yb=pt+ih;
+  IT.forEach(function(x,j){if(!inTerm(x,k))return;var h=ih*x.m/mx;yb-=h;o+='<rect x="'+(cx-bw/2)+'" y="'+yb+'" width="'+bw+'" height="'+Math.max(h-1,1)+'" rx="2" fill="'+ICOL[j%8]+'"><title>'+esc(x.n)+' · '+ymL(k)+' · '+f0(x.m)+'</title></rect>'});
+  if(tots[i])o+='<text x="'+cx+'" y="'+(yb-4)+'" text-anchor="middle" font-size="10" fill="var(--text)">'+fm(tots[i])+'</text>';
+  o+='<text x="'+cx+'" y="'+(H-8)+'" text-anchor="middle" font-size="10" '+(k===INOW?'font-weight="700" fill="var(--sav)"':'fill="var(--muted)"')+'>'+ymL(k)+'</text>'});
+ return o+'</svg>'}
+function renderInst(){var box=document.getElementById('inst');if(!box)return;
+ var W=monthsBetween(IWIN,addM(IWIN,11)),now=IT.filter(function(x){return inTerm(x,INOW)}),due=0,paidAmt=0,late=[],remAmt=0,ongoing=0,lastE='';
+ now.forEach(function(x){due+=x.m;if(x.p[INOW])paidAmt+=x.m});
+ IT.forEach(function(x){monthsBetween(x.s,x.e&&x.e<INOW?x.e:INOW).forEach(function(k){if(stOf(x,k)==='late')late.push({x:x,k:k})});if(x.e){remAmt+=iinfo(x).rem*x.m;if(x.e>lastE)lastE=x.e}else ongoing++});
+ var lateAmt=late.reduce(function(a,q){return a+q.x.m},0),lm=latestMonth(),inc=(lm&&T(lm))?T(lm).inc:0,dti=inc?due/inc*100:null,unp=due-paidAmt;
+ var K=[['ภาระผ่อนเดือนนี้','฿'+f0(due),unp>0?'<span class="chip dn">ยังไม่ชำระ ฿'+f0(unp)+'</span>':(now.length?'<span class="chip up">ชำระครบแล้ว</span>':'<span class="chip">ไม่มีรายการ</span>'),now.length+' รายการ · '+ymL(INOW),'--sav'],
+ ['ชำระแล้วเดือนนี้','฿'+f0(paidAmt),'<div class="pb"><i style="width:'+(due?Math.min(100,paidAmt/due*100):0)+'%"></i></div>','จาก ฿'+f0(due)+' ('+(due?Math.round(paidAmt/due*100):0)+'%)','--good'],
+ ['ค้างชำระ','฿'+f0(lateAmt),late.length?'<span class="chip dn">'+late.length+' งวด</span>':'<span class="chip up">ไม่มีค้างชำระ</span>','เกินกำหนดและยังไม่ติ๊กชำระ','--bad'],
+ ['ยอดคงเหลือที่ต้องผ่อน','฿'+f0(remAmt),lastE?'<span class="chip">ผ่อนหมด '+ymL(lastE)+'</span>':'<span class="chip">ไม่ระบุวันสิ้นสุด</span>',ongoing?'ไม่รวม '+ongoing+' รายการที่ไม่ระบุงวดสุดท้าย':'รวมทุกรายการ','--fix'],
+ ['ภาระผ่อน / รายรับ',dti===null?'–':dti.toFixed(1)+'%',dti===null?'<span class="chip">ยังไม่มีข้อมูลรายรับ</span>':(dti>40?'<span class="chip dn">เกินเกณฑ์ 40%</span>':'<span class="chip up">อยู่ในเกณฑ์</span>'),'เกณฑ์แนะนำไม่เกิน 40%','--var']];
+ var h='<div class="og k5">'+K.map(function(c){return'<div class="kc" style="--c:var('+c[4]+')"><div class="l">'+c[0]+'</div><div class="v">'+c[1]+'</div><div class="cr">'+c[2]+'</div><div class="r">'+c[3]+'</div></div>'}).join('')+'</div>';
+ var ins=[],unpN=now.filter(function(x){return!x.p[INOW]});
+ if(unpN.length)ins.push(['warn',unpN.length+' รายการยังไม่ชำระเดือนนี้ (฿'+f0(unp)+'): '+unpN.map(function(x){return esc(x.n)}).join(', ')]);else if(now.length)ins.push(['ok','ชำระครบทุกรายการของเดือนนี้แล้ว']);
+ if(late.length)ins.push(['warn','ค้างชำระย้อนหลัง '+late.length+' งวด รวม ฿'+f0(lateAmt)+' ('+Object.keys(late.reduce(function(a,q){a[q.x.n]=1;return a},{})).map(esc).join(', ')+')']);
+ var nx=IT.filter(function(x){return x.e&&x.e>=INOW}).sort(function(a,b){return a.e<b.e?-1:1})[0];
+ if(nx){var mm=monthsBetween(INOW,nx.e).length-1;ins.push(['info','“'+esc(nx.n)+'” ผ่อนหมด '+ymL(nx.e)+(mm>0?' (อีก '+mm+' เดือน)':' (เดือนนี้)')+' หลังจากนั้นภาระลดลง ฿'+f0(nx.m)+' ต่อเดือน'])}
+ if(lastE)ins.push(['info','รายการที่ระบุงวดสุดท้ายจะผ่อนหมดทั้งหมดภายใน '+ymL(lastE)]);
+ if(dti!==null)ins.push([dti>40?'warn':'ok','ภาระผ่อน '+dti.toFixed(1)+'% ของรายรับ ('+(lm?M[lm]:'')+')'+(dti>40?' สูงกว่าเกณฑ์แนะนำ 40%':' อยู่ในเกณฑ์แนะนำ (ไม่เกิน 40%)')]);
+ if(IT.some(function(x){return!x.e}))ins.push(['info','บางรายการยังไม่ระบุงวดสุดท้าย ระบุเดือนสิ้นสุดเพื่อให้คำนวณยอดคงเหลือและวันที่ผ่อนหมดได้แม่นขึ้น']);
+ var ic={ok:'✓',warn:'!',info:'i'};
+ var lg='<div class="lg">'+IT.map(function(x,j){return'<span style="--c:'+ICOL[j%8]+'"><i></i>'+esc(x.n)+'</span>'}).join('')+'</div>';
+ h+='<div class="og c21"><div class="card"><div class="ch"><h2>ภาระผ่อนรายเดือน</h2><small>'+ymL(W[0])+' – '+ymL(W[11])+' · ดูว่าภาระลดลงเมื่อไหร่</small></div>'+(IT.length?instChart(W)+lg:'<div class="empty">ยังไม่มีรายการผ่อน</div>')+'</div>'
+ +'<div class="card"><div class="ch"><h2>ข้อสังเกตและคำแนะนำ</h2></div><ul class="ins">'+(ins.length?ins.map(function(x){return'<li><span class="ic '+x[0]+'">'+ic[x[0]]+'</span><span>'+x[1]+'</span></li>'}).join(''):'<li><span>เพิ่มรายการผ่อนเพื่อดูข้อสังเกต</span></li>')+'</ul></div></div>';
+ var tb='<div class="card"><div class="ch"><h2>ตารางบันทึกการผ่อน</h2><div class="wn"><button class="pen" data-win="-6">‹ ก่อนหน้า</button><button class="pen" data-win="0">เดือนนี้</button><button class="pen" data-win="6">ถัดไป ›</button></div></div><div class="scroll"><table class="it"><thead><tr><th>รายการ</th>'+W.map(function(k){return'<th'+(k===INOW?' class="cm"':'')+'>'+ymL(k)+'</th>'}).join('')+'<th>ความคืบหน้า</th><th></th></tr></thead><tbody>';
+ IT.forEach(function(x,j){var n=iinfo(x),sym={paid:'✓',late:'!',due:'○',future:'○'};
+  tb+='<tr><td><i class="dt" style="background:'+ICOL[j%8]+'"></i><b>'+esc(x.n)+'</b><small>'+esc(x.t)+' · ฿'+f0(x.m)+'/เดือน'+(x.d?' · ครบกำหนดวันที่ '+x.d:'')+(x.e?' · ถึง '+ymL(x.e):'')+'</small></td>'
+  +W.map(function(k){var st=stOf(x,k);return'<td class="mc'+(k===INOW?' cm':'')+'">'+(st==='na'?'<span class="na0">–</span>':'<button class="ck '+st+'" data-i="'+x.id+'" data-ym="'+k+'" title="'+esc(x.n)+' · '+ymL(k)+' · '+({paid:'ชำระแล้ว (กดเพื่อยกเลิก)',late:'เกินกำหนด ยังไม่ชำระ',due:'ถึงกำหนดเดือนนี้',future:'ยังไม่ถึงกำหนด'})[st]+'">'+sym[st]+'</button>')+'</td>'}).join('')
+  +'<td class="pg">'+(x.e?'<div class="pb"><i style="width:'+(n.tot?n.paid/n.tot*100:0)+'%"></i></div><small>'+n.paid+'/'+n.tot+' งวด · เหลือ ฿'+f0(n.rem*x.m)+'</small>':'<small>ชำระแล้ว '+n.paid+' งวด<br>ไม่ระบุงวดสุดท้าย</small>')+'</td>'
+  +'<td class="ac"><button class="del" data-edit="'+x.id+'" title="แก้ไข" aria-label="แก้ไข">✎</button><button class="del'+(IARM===x.id?' arm':'')+'" data-del="'+x.id+'" title="ลบรายการ" aria-label="ลบรายการ">'+(IARM===x.id?'ยืนยันลบ?':TRASH)+'</button></td></tr>'});
+ if(!IT.length)tb+='<tr><td colspan="'+(W.length+3)+'" class="empty">ยังไม่มีรายการผ่อน กด “+ เพิ่มรายการผ่อน” ที่ด้านบน</td></tr>';
+ tb+='<tr class="tt"><td>ยอดที่ต้องผ่อน</td>'+W.map(function(k){var s=IT.reduce(function(a,x){return a+(inTerm(x,k)?x.m:0)},0);return'<td class="mc'+(k===INOW?' cm':'')+'">'+(s?f0(s):'–')+'</td>'}).join('')+'<td></td><td></td></tr>'
+ +'<tr class="tt2"><td>ชำระแล้ว</td>'+W.map(function(k){var s=IT.reduce(function(a,x){return a+(inTerm(x,k)&&x.p[k]?x.m:0)},0);return'<td class="mc'+(k===INOW?' cm':'')+'">'+(s?f0(s):'–')+'</td>'}).join('')+'<td></td><td></td></tr></tbody></table></div><div class="note">กดวงกลมในแต่ละเดือนเพื่อบันทึกว่าชำระแล้ว (กดซ้ำเพื่อยกเลิก) · ✓ ชำระแล้ว · ! เกินกำหนดยังไม่ชำระ · ○ ยังไม่ถึงกำหนด/ถึงกำหนดเดือนนี้'+(ISYNC?' · ซิงค์กับแท็บ “ผ่อน” ใน Google Sheet':' · ข้อมูลเก็บไว้ในเบราว์เซอร์นี้')+'</div></div>';
+ box.innerHTML=h+tb}
+function openF(id){IEDIT=id||null;var x=id?IT.filter(function(q){return q.id===id})[0]:null,g=function(i){return document.getElementById(i)};
+ g('iftitle').textContent=x?'แก้ไขรายการผ่อน':'เพิ่มรายการผ่อน';g('f-n').value=x?x.n:'';g('f-t').value=x?x.t:'อุปกรณ์/สินค้า';g('f-m').value=x?x.m:'';g('f-s').value=x?x.s:INOW;g('f-e').value=x?x.e:'';g('f-d').value=x&&x.d?x.d:'';
+ g('f-ppw').style.display=x?'none':'';g('f-pp').checked=true;g('f-err').textContent='';g('ifm').hidden=false;g('f-n').focus()}
+function saveF(){var g=function(i){return document.getElementById(i)},n=g('f-n').value.trim(),m=parseFloat(g('f-m').value),s=g('f-s').value.trim(),e=g('f-e').value.trim(),d=parseInt(g('f-d').value,10)||0,re=/^\d{4}-\d{2}$/,er=g('f-err');
+ if(!n||!(m>0)||!re.test(s)){er.textContent='กรอกชื่อรายการ ยอดผ่อนต่อเดือน และเดือนเริ่มต้น (รูปแบบ ปปปป-ดด)';return}
+ if(e&&(!re.test(e)||e<s)){er.textContent='งวดสุดท้ายต้องเป็นเดือนที่ไม่ก่อนเดือนเริ่มต้น';return}
+ if(d&&(d<1||d>31)){er.textContent='วันที่ครบกำหนดต้องอยู่ระหว่าง 1–31';return}
+ var t=g('f-t').value;
+ if(IEDIT){var x=IT.filter(function(q){return q.id===IEDIT})[0];if(x){x.n=n;x.t=t;x.m=m;x.s=s;x.e=e;x.d=d}}
+ else{var p={};if(g('f-pp').checked&&s<INOW)monthsBetween(s,addM(INOW,-1)).forEach(function(k){if(!e||k<=e)p[k]=1});IT.push({id:Date.now(),n:n,t:t,m:m,s:s,e:e,d:d,p:p})}
+ g('ifm').hidden=true;isave();renderInst()}
+document.getElementById('iadd').onclick=function(){openF(0)};
+document.getElementById('f-cancel').onclick=function(){document.getElementById('ifm').hidden=true};
+document.getElementById('f-save').onclick=saveF;
+document.getElementById('ipayall').onclick=function(){IT.forEach(function(x){if(inTerm(x,INOW))x.p[INOW]=1});isave();renderInst()};
+document.getElementById('pg-inst').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var d=b.dataset;
+ if(d.ym){var x=IT.filter(function(q){return String(q.id)===d.i})[0];if(x){if(x.p[d.ym])delete x.p[d.ym];else x.p[d.ym]=1;isave();renderInst()}}
+ else if(d.win!==undefined){IWIN=d.win==='0'?addM(INOW,-2):addM(IWIN,+d.win);isave();renderInst()}
+ else if(d.edit){openF(+d.edit)}
+ else if(d.del){var id=+d.del;if(IARM!==id){IARM=id;renderInst();setTimeout(function(){if(IARM===id){IARM=null;renderInst()}},3500);return}IARM=null;IT=IT.filter(function(q){return q.id!==id});isave();renderInst()}});
+function normItem(x){var p={};if(Array.isArray(x.p))x.p.forEach(function(k){p[k]=1});else Object.keys(x.p||{}).forEach(function(k){if(x.p[k])p[k]=1});return{id:Number(x.id)||Date.now(),n:String(x.n||''),t:String(x.t||'อื่นๆ'),m:Number(x.m)||0,s:x.s||INOW,e:x.e||'',d:parseInt(x.d,10)||0,p:p}}
+function instPull(){if(!ready())return Promise.resolve();
+ return api('instRead').then(function(r){if(!Array.isArray(r.items))throw{code:'bad_shape',message:'อ่านแท็บ “ผ่อน” ไม่ได้'};
+  ISYNC=true;
+  if(r.empty){if(IT.length)return enq(function(){return api('instSave',{items:IT})})}
+  else{IT=r.items.map(normItem);try{localStorage.setItem('fin-inst',JSON.stringify({it:IT,w:IWIN}))}catch(e){}}
+ }).then(function(){renderInst()},function(e){ISYNC=false;handleErr(e)})}
+iload();
 
 norm();load();autoCur();draw();initSheet();
 </script>
