@@ -70,6 +70,45 @@ tr.i td:first-child{padding-left:32px}
 .fl{display:block;font-size:.82rem;color:var(--muted);margin:8px 0}
 .fl input{display:block;width:100%;margin-top:4px;padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit}
 .cfgb{display:flex;gap:8px;margin-top:10px}.cfgb .pen{margin:0}
+.app{display:flex;min-height:100vh}
+.side{width:224px;flex:none;background:var(--card);border-right:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh;align-self:flex-start}
+.brand{font-weight:700;font-size:1.05rem;padding:4px 10px 14px}
+.nv{display:flex;align-items:center;gap:10px;width:100%;text-align:left;font:inherit;font-size:.92rem;border:0;background:none;color:var(--muted);padding:10px 12px;border-radius:10px;cursor:pointer}
+.nv:hover{background:var(--head)}.nv.on{background:var(--sav);color:#fff;font-weight:600}
+.sfoot{margin-top:auto;font-size:.76rem;color:var(--muted);display:flex;gap:7px;align-items:flex-start;padding:8px 10px}
+.sd{width:8px;height:8px;border-radius:50%;background:var(--muted);flex:none;margin-top:5px}
+.sd.ok{background:var(--good)}.sd.busy{background:var(--fix)}.sd.err{background:var(--bad)}
+.app main.wrap{flex:1;min-width:0;width:100%}
+[hidden]{display:none!important}
+.how{margin:0;padding-left:20px;font-size:.86rem;color:var(--muted)}.how li{margin:4px 0}
+@media(max-width:780px){.app{flex-direction:column}
+.side{width:auto;height:auto;flex-direction:row;align-items:center;gap:6px;padding:8px 10px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto;z-index:20;align-self:stretch}
+.brand{padding:0 8px 0 0;white-space:nowrap}.sfoot{display:none}.nv{width:auto;white-space:nowrap;padding:8px 12px}}
+.og{display:grid;gap:14px;margin-bottom:14px}
+.og.k5{grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch}
+@media(max-width:760px){.og.k5{grid-template-columns:repeat(2,minmax(0,1fr))}.og.k5 .kc:last-child{grid-column:1/-1}}
+.og.c21{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}.og.c11{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media(max-width:1180px){.og.c21,.og.c11{grid-template-columns:1fr}}
+.kc{display:flex;flex-direction:column;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;border-top:4px solid var(--c)}
+.kc .l,.kc .r{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.kc .l{color:var(--muted);font-size:.8rem;height:1.3em}.kc .v{font-size:1.35rem;font-weight:700;margin:2px 0;white-space:nowrap;height:1.5em;line-height:1.5em}.kc .cr{height:1.7em;display:flex;align-items:center}.kc .r{color:var(--muted);font-size:.74rem;margin-top:3px;height:1.3em}
+.sp{width:100%;height:30px;margin-top:auto;padding-top:6px;display:block}
+.chip{display:inline-block;white-space:nowrap;font-size:.74rem;padding:1px 9px;border-radius:999px;background:var(--head);color:var(--muted)}.chip.up{color:var(--good)}.chip.dn{color:var(--bad)}
+.ch{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:10px}.ch h2{margin:0}.ch small{color:var(--muted);font-size:.76rem}
+.ch-svg{width:100%;height:auto;display:block}
+.lg{display:flex;gap:12px;flex-wrap:wrap;font-size:.76rem;color:var(--muted);margin-top:8px}.lg i{display:inline-block;width:10px;height:10px;border-radius:3px;background:var(--c);margin-right:5px;vertical-align:-1px}.lg i.ds{background:none;border-top:2px dashed var(--c);height:0;width:14px;border-radius:0;vertical-align:3px}
+.dv{display:grid;grid-template-columns:minmax(80px,1.3fr) 2fr auto;gap:10px;align-items:center;font-size:.82rem;margin:9px 0}.dv .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.dv .tr{position:relative;height:10px;background:var(--head);border-radius:6px}.dv .tr b{position:absolute;top:0;height:100%;border-radius:6px}.dv .tr:after{content:"";position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:var(--muted)}.dv .am{font-weight:600;min-width:58px;text-align:right}
+.empty{color:var(--muted);font-size:.86rem;padding:18px 0}
+.ins{list-style:none;margin:0;padding:0}.ins li{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:.86rem}.ins li:last-child{border:0}
+.ins .ic{flex:none;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;background:var(--head);color:var(--muted)}.ins .ic.ok{color:var(--good)}.ins .ic.warn{color:var(--bad)}
+.t2 th,.t2 td{padding:9px 12px}.t2 th:first-child,.t2 td:first-child{min-width:150px}.t2 td.cs{font-weight:700}.t2 tr.tt td{font-weight:700;background:var(--head)}.dt{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:8px}
+.ovwrap{display:grid;grid-template-columns:minmax(0,1fr) 172px;gap:16px;align-items:start}
+.rail{position:sticky;top:16px;display:flex;flex-direction:column;gap:4px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px}
+.rail::before{content:"เลือกเดือน";font-size:.72rem;color:var(--muted);padding:2px 8px 6px}
+.rail button{font:inherit;text-align:left;border:0;background:none;color:var(--text);padding:8px 10px;border-radius:10px;cursor:pointer;display:flex;flex-direction:column;gap:1px}
+.rail button small{font-size:.7rem;color:var(--muted)}.rail button:hover{background:var(--head)}
+.rail button.on{background:var(--sav);color:#fff}.rail button.on small{color:rgba(255,255,255,.88)}
+@media(max-width:900px){.ovwrap{grid-template-columns:1fr}.rail{order:-1;flex-direction:row;overflow-x:auto;top:58px;z-index:15;padding:6px}.rail::before{display:none}.rail button{flex:none}}
 .pen.on{background:var(--sav);border-color:var(--sav);color:#fff}
 .add+.add{margin-left:6px}
 .add.on{background:var(--c);color:var(--card)}
@@ -84,8 +123,6 @@ tr.wd td{font-weight:600}
 tr.wd td:first-child{color:var(--sav)}
 tr.tot td{font-weight:700;background:var(--head)}
 td.na{color:var(--muted);opacity:.5}
-td.hl,th.hl{background:rgba(47,109,246,.09)}
-tr.g td.hl{background:var(--head)}
 .neg{color:var(--bad)}
 .tag{font-size:.68rem;font-weight:500;margin-top:2px;color:var(--muted)}
 .tag.p{color:var(--muted)}.tag.a{color:var(--sav)}
@@ -94,24 +131,34 @@ thead th:nth-child(2),tbody td:nth-child(2){border-right:2px solid var(--muted)}
 </style>
 </head>
 <body>
-<div class="wrap">
-<header>
-<div><h1>แดชบอร์ดแผนงบการเงิน</h1><div class="sub">สรุปรายรับ รายจ่าย และเงินคงเหลือ เทียบกับแผน รายรับ-รายจ่าย</div><div class="sync" id="sync"><span class="sd"></span><span id="syncmsg">กำลังตรวจสอบการเชื่อมต่อ Google Sheet…</span><button id="refresh" class="pen" style="display:none" title="ดึงข้อมูลใหม่จากชีต">↻ รีเฟรช</button><button id="gear" class="pen" title="ตั้งค่าการเชื่อมต่อ">⚙ ตั้งค่า</button></div></div>
-<div class="tabs" id="tabs"></div>
-</header>
-<div class="card" id="cfg" style="display:none;margin-bottom:14px"><h2>ตั้งค่าการเชื่อมต่อ Google Sheet</h2>
+<div class="app">
+<aside class="side"><div class="brand">💰 งบการเงิน</div>
+<button class="nv on" data-pg="ov"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg> ภาพรวม</button>
+<button class="nv" data-pg="plan"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg> แผนงบการเงิน</button>
+<button class="nv" data-pg="set"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg> ตั้งค่า</button>
+<div class="sfoot"><span class="sd" id="sdot"></span><span id="sstat">ตรวจสอบการเชื่อมต่อ…</span></div></aside>
+<main class="wrap">
+<section id="pg-ov">
+<header><div><h1>ภาพรวม</h1><div class="sub">ภาพรวมการเงินรายเดือน · ป้าย ▲▼ บนการ์ด = ผลต่างจากตัวเลขในแผนรายรับ-รายจ่าย</div></div></header>
+<div class="ovwrap"><div id="ovr"></div><aside class="rail" id="tabs" aria-label="เลือกเดือน"></aside></div>
+</section>
+<section id="pg-plan" hidden>
+<header><div><h1>แผนงบการเงิน</h1><div class="sub">ตารางแผนงบรายรับรายจ่ายรายเดือน แก้ไขแล้วบันทึกลง Google Sheet</div><div class="sync" id="sync"><span class="sd"></span><span id="syncmsg">กำลังตรวจสอบการเชื่อมต่อ Google Sheet…</span><button id="refresh" class="pen" style="display:none" title="ดึงข้อมูลใหม่จากชีต">↻ รีเฟรช</button></div></div></header>
+<div class="card"><h2>ตารางแผนงบรายรับรายจ่าย (บาท) <button id="edit" class="pen" title="แก้ไขข้อมูล" aria-label="แก้ไขข้อมูล"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg> แก้ไข</button></h2>
+<div class="scroll"><table id="tbl"></table></div>
+<div class="note">เดือนที่ยังไม่มีข้อมูลแสดงเป็น – ข้อมูลจากชีต “แผนงบการเงิน” · Working Day นับวันจันทร์–ศุกร์ ยังไม่หักวันหยุดนักขัตฤกษ์ · กด “แก้ไข” เพื่อพิมพ์ตัวเลขในตารางได้ทุกช่อง · กด + ที่หัวข้อแต่ละหมวดเพื่อเพิ่มรายการ กด − เพื่อแสดงไอคอนถังขยะในแต่ละแถวของหมวดนั้นแล้วกดลบ (บันทึกไว้ในเบราว์เซอร์นี้)</div></div>
+</section>
+<section id="pg-set" hidden>
+<header><div><h1>ตั้งค่า</h1><div class="sub">การเชื่อมต่อกับ Google Sheet ผ่าน Apps Script Web App</div></div></header>
+<div class="card" style="max-width:720px"><h2>การเชื่อมต่อ Google Sheet</h2>
+<div class="sync" id="cfgstat"><span class="sd"></span><span id="cfgmsg">กำลังตรวจสอบการเชื่อมต่อ…</span></div>
 <label class="fl">Web App URL (ลงท้ายด้วย /exec)<input id="cfgurl" type="url" placeholder="https://script.google.com/macros/s/.../exec" autocomplete="off"></label>
 <label class="fl">Token (จากฟังก์ชัน setupToken ใน Apps Script)<input id="cfgtok" type="password" autocomplete="off"></label>
 <div class="cfgb"><button id="cfgsave" class="pen on">บันทึกและเชื่อมต่อ</button><button id="cfgclr" class="pen">ตัดการเชื่อมต่อ</button></div>
 <div class="note">ค่าที่กรอกเก็บไว้ในเบราว์เซอร์นี้เท่านั้น ไม่ได้อยู่ในไฟล์ของหน้าเว็บ</div></div>
-<div class="grid kpis" id="kpis"></div>
-<div class="grid two">
-<div class="card"><h2>สัดส่วนการใช้รายรับ</h2><div class="donutwrap"><div class="donut" id="donut"></div><div class="leg" id="leg"></div></div></div>
-<div class="card"><h2>เทียบกับแผน</h2><div id="bars"></div></div>
-</div>
-<div class="card"><h2>ตารางแผนงบรายรับรายจ่าย (บาท) <button id="edit" class="pen" title="แก้ไขข้อมูล" aria-label="แก้ไขข้อมูล"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg> แก้ไข</button></h2>
-<div class="scroll"><table id="tbl"></table></div>
-<div class="note">เดือนที่ยังไม่มีข้อมูลแสดงเป็น – ข้อมูลจากชีต “แผนงบการเงิน” · Working Day นับวันจันทร์–ศุกร์ ยังไม่หักวันหยุดนักขัตฤกษ์ · กด “แก้ไข” เพื่อพิมพ์ตัวเลขในตารางได้ทุกช่อง · กด + ที่หัวข้อแต่ละหมวดเพื่อเพิ่มรายการ กด − เพื่อแสดงไอคอนถังขยะในแต่ละแถวของหมวดนั้นแล้วกดลบ (บันทึกไว้ในเบราว์เซอร์นี้)</div></div>
+<div class="card" style="max-width:720px;margin-top:14px"><h2>วิธีหา URL และ Token</h2><ol class="how"><li>เปิดชีตแล้วไปที่ Extensions &gt; Apps Script</li><li>รันฟังก์ชัน setupToken แล้วคัดลอก API_TOKEN จาก Execution log</li><li>Deploy เป็น Web app (Execute as: Me, Who has access: Anyone) แล้วคัดลอก URL ที่ลงท้าย /exec</li></ol></div>
+</section>
+</main>
 </div>
 <script>
 var M=['แผน รายรับ-รายจ่าย','ส.ค. 69','ก.ย. 69','ต.ค. 69','พ.ย. 69','ธ.ค. 69','ม.ค. 70','ก.พ. 70','มี.ค. 70','เม.ย. 70','พ.ค. 70','มิ.ย. 70'];
@@ -132,28 +179,77 @@ var cur=2,tabs=document.getElementById('tabs');
 function delta(k,a,b){var d=a-b;if(Math.abs(d)<.5)return'<span class="d">เท่ากับแผน</span>';
  var good=(k==='inc'||k==='sav'||k==='rem')?d>0:d<0;
  return'<span class="d '+(good?'up':'dn')+'">'+(d>0?'▲ ':'▼ ')+f0(Math.abs(d))+' จากแผน</span>'}
+function fm(n){var a=Math.abs(n);return a>=1000?(n/1000).toFixed(a>=100000?0:1).replace(/\.0$/,'')+'k':String(Math.round(n))}
+function outf(t){return t.sav+t.fix+t.var}
+function spark(v,c){if(v.length<2)return'';var W=120,H=30,mx=Math.max.apply(null,v),mn=Math.min.apply(null,v),s=(mx-mn)||1,p=v.map(function(x,i){return[(i/(v.length-1)*(W-8)+4).toFixed(1),(H-4-(x-mn)/s*(H-8)).toFixed(1)]}),l=p[p.length-1];
+ return'<svg class="sp" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none"><polyline fill="none" stroke="'+c+'" stroke-width="2" stroke-linejoin="round" points="'+p.map(function(q){return q.join(',')}).join(' ')+'"/><circle cx="'+l[0]+'" cy="'+l[1]+'" r="3" fill="'+c+'"/></svg>'}
+function colChart(cats,ser,lines,H){var W=520,pl=40,pr=8,pt=12,pb=24,iw=W-pl-pr,ih=H-pt-pb,all=[0];
+ ser.forEach(function(s){all=all.concat(s.v)});lines.forEach(function(l){all.push(l.v)});
+ var mx=Math.max.apply(null,all),mn=Math.min.apply(null,all);if(mx===mn)mx=mn+1;
+ function y(v){return pt+ih*(mx-v)/(mx-mn)}
+ var o='<svg class="ch-svg" viewBox="0 0 '+W+' '+H+'">';
+ for(var g=0;g<=4;g++){var v=mn+(mx-mn)*g/4,yy=y(v);o+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" stroke="var(--line)"/><text x="'+(pl-6)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+fm(v)+'</text>'}
+ var gw=iw/cats.length,bw=Math.min(34,gw*.7/ser.length);
+ cats.forEach(function(c,i){var cx=pl+gw*i+gw/2;o+='<text x="'+cx+'" y="'+(H-7)+'" text-anchor="middle" font-size="11" fill="var(--muted)">'+c+'</text>';
+  ser.forEach(function(s,j){var v=s.v[i],x=cx-bw*ser.length/2+bw*j,y0=y(0),y1=y(v);
+   o+='<rect x="'+(x+1)+'" y="'+Math.min(y0,y1)+'" width="'+(bw-2)+'" height="'+Math.max(1,Math.abs(y0-y1))+'" rx="3" fill="'+(s.cf?s.cf(v):s.c)+'"><title>'+c+' · '+f0(v)+'</title></rect>'+(bw>=15?'<text x="'+(x+bw/2)+'" y="'+(v>=0?y1-4:y1+11)+'" text-anchor="middle" font-size="10" fill="var(--text)">'+fm(v)+'</text>':'')})});
+ lines.forEach(function(l){var yy=y(l.v);o+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" stroke="'+l.c+'" stroke-width="1.6" stroke-dasharray="6 4"/>'});
+ return o+'</svg>'}
+function stackChart(cats,rows){var W=520,H=230,pl=34,pr=8,pt=10,pb=24,iw=W-pl-pr,ih=H-pt-pb,gw=iw/cats.length,bw=Math.min(46,gw*.62),o='<svg class="ch-svg" viewBox="0 0 '+W+' '+H+'">';
+ [0,.25,.5,.75,1].forEach(function(q){var yy=pt+ih*(1-q);o+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" stroke="var(--line)"/><text x="'+(pl-5)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+q*100+'%</text>'});
+ cats.forEach(function(c,i){var t=rows[i],ps=[['sav',t.sav],['fix',t.fix],['var',t.var],['rem',Math.max(0,t.rem)]],sm=ps.reduce(function(a,x){return a+x[1]},0)||1,yb=pt+ih,cx=pl+gw*i+gw/2;
+  ps.forEach(function(q){var h=ih*q[1]/sm;yb-=h;o+='<rect x="'+(cx-bw/2)+'" y="'+yb+'" width="'+bw+'" height="'+h+'" fill="var('+CL[q[0]]+')"><title>'+c+' · '+KN[q[0]]+' '+Math.round(q[1]/sm*100)+'%</title></rect>';if(h>15)o+='<text x="'+cx+'" y="'+(yb+h/2+4)+'" text-anchor="middle" font-size="10" fill="var(--card)">'+Math.round(q[1]/sm*100)+'%</text>'});
+  o+='<text x="'+cx+'" y="'+(H-7)+'" text-anchor="middle" font-size="11" fill="var(--muted)">'+c+'</text>'});
+ return o+'</svg>'}
+var KN={inc:'รายรับรวม',sav:'เงินออม',fix:'รายจ่ายคงที่',var:'รายจ่ายผันแปร',rem:'เงินคงเหลือ'},KK=['inc','sav','fix','var','rem'];
+function goodK(k,d){return(k==='inc'||k==='sav'||k==='rem')?d>0:d<0}
+function dvRows(list){var mx=Math.max.apply(null,list.map(function(x){return Math.abs(x.d)}).concat([1]));
+ return list.map(function(x){var w=Math.abs(x.d)/mx*50,g=goodK(x.k,x.d),c=g?'var(--good)':'var(--bad)';
+  return'<div class="dv" title="'+(x.tip||'')+'"><span class="nm">'+x.n+'</span><span class="tr"><b style="background:'+c+';width:'+w+'%;'+(x.d>=0?'left:50%':'left:'+(50-w)+'%')+'"></b></span><span class="am" style="color:'+c+'">'+(x.d>0?'+':x.d<0?'−':'')+f0(Math.abs(x.d))+'</span></div>'}).join('')}
+function drawOv(){
+ var Z={inc:0,sav:0,fix:0,var:0,rem:0},t=T(cur)||Z,P=T(0)||Z,mo=[],i;
+ for(i=1;i<12;i++)if(T(i))mo.push(i);
+ var nm=mo.map(function(i){return M[i]}),isP=cur===0;
+ function chip(k,a,b){var d=a-b;if(isP)return'<span class="chip">ตัวเลขตามแผน</span>';if(Math.abs(d)<.5)return'<span class="chip">ตรงตามแผน</span>';return'<span class="chip '+(goodK(k,d)?'up':'dn')+'" title="ผลต่างจากแผน">'+(d>0?'▲ ':'▼ ')+f0(Math.abs(d))+(b?' ('+Math.round(Math.abs(d)/Math.abs(b)*100)+'%)':'')+'</span>'}
+ var h='<div class="og k5">'+KK.map(function(k){var sub=k==='inc'?(WD[cur]?'Working Day '+WD[cur]+' วัน':'&nbsp;'):(t.inc?(t[k]/t.inc*100).toFixed(1)+'% ของรายรับ':'&nbsp;');
+  return'<div class="kc" style="--c:var('+CL[k]+')"><div class="l">'+KN[k]+'</div><div class="v'+(t[k]<0?' neg':'')+'">฿'+f0(t[k])+'</div>'+'<div class="cr">'+chip(k,t[k],P[k])+'</div><div class="r">'+sub+'</div>'+spark(mo.map(function(i){return T(i)[k]}),'var('+CL[k]+')')+'</div>'}).join('')+'</div>';
+ var lg1='<div class="lg"><span style="--c:var(--inc)"><i></i>รายรับ</span><span style="--c:var(--var)"><i></i>รายจ่าย (คงที่ + ผันแปร)</span><span style="--c:var(--sav)"><i></i>เงินออม</span><span style="--c:var(--muted)"><i class="ds"></i>เส้นประ = ตัวเลขแผน</span></div>';
+ h+='<div class="og c21"><div class="card"><div class="ch"><h2>รายรับ รายจ่าย และเงินออม เทียบแผน</h2><small>ทุกเดือนที่มีข้อมูล</small></div>'+colChart(nm,[{c:'var(--inc)',v:mo.map(function(i){return T(i).inc})},{c:'var(--var)',v:mo.map(function(i){return T(i).fix+T(i).var})},{c:'var(--sav)',v:mo.map(function(i){return T(i).sav})}],[{v:P.inc,c:'var(--inc)'},{v:P.fix+P.var,c:'var(--var)'},{v:P.sav,c:'var(--sav)'}],250)+lg1+'</div>'
+ +'<div class="card"><div class="ch"><h2>เงินคงเหลือรายเดือน</h2><small>ทุกเดือนที่มีข้อมูล</small></div>'+colChart(nm,[{c:'var(--rem)',v:mo.map(function(i){return T(i).rem}),cf:function(v){return v<0?'var(--bad)':'var(--rem)'}}],[],250)+'</div></div>';
+ var cats=['แผน'].concat(nm),rows=[P].concat(mo.map(function(i){return T(i)}));
+ var lg2='<div class="lg">'+['sav','fix','var','rem'].map(function(k){return'<span style="--c:var('+CL[k]+')"><i></i>'+KN[k]+'</span>'}).join('')+'</div>';
+ var cd=KK.map(function(k){return{n:KN[k],k:k,d:t[k]-P[k],tip:'แผน '+f0(P[k])+' → '+f0(t[k])}});
+ h+='<div class="og c11"><div class="card"><div class="ch"><h2>สัดส่วนการใช้รายรับ</h2><small>เทียบแผนทุกเดือน</small></div>'+stackChart(cats,rows)+lg2+'</div>'
+ +'<div class="card"><div class="ch"><h2>ผลต่างจากแผนตามหมวด</h2><small>'+(isP?'เลือกเดือนเพื่อเทียบ':M[cur]+' − แผน')+'</small></div>'+(isP?'<div class="empty">เลือกเดือนด้านบนเพื่อดูว่าหมวดไหนสูงหรือต่ำกว่าแผน</div>':dvRows(cd)+'<div class="lg"><span style="--c:var(--good)"><i></i>ดีกว่าแผน</span><span style="--c:var(--bad)"><i></i>แย่กว่าแผน</span></div>')+'</div></div>';
+ var it=[];G.forEach(function(g){g.r.forEach(function(r){if(r.h)return;var p=r[1],a=r[cur+1];if(isP||(p===null&&a===null))return;it.push({n:r[0].trim(),k:g.k,d:(a||0)-(p||0),tip:'แผน '+f0(p||0)+' → จริง '+f0(a||0)})})});
+ it.sort(function(a,b){return Math.abs(b.d)-Math.abs(a.d)});it=it.filter(function(x){return Math.abs(x.d)>=1}).slice(0,7);
+ var sr=t.inc?t.sav/t.inc*100:0,psr=P.inc?P.sav/P.inc*100:0,ins=[],dr=t.rem-P.rem;
+ if(!isP)ins.push([goodK('rem',dr)?'ok':'warn','เงินคงเหลือ '+M[cur]+' ฿'+f0(t.rem)+(Math.abs(dr)<.5?' ตรงตามแผน':(dr>0?' สูงกว่าแผน ฿':' ต่ำกว่าแผน ฿')+f0(Math.abs(dr)))]);
+ else ins.push(['info','แผนกำหนดเงินคงเหลือ ฿'+f0(P.rem)+' จากรายรับ ฿'+f0(P.inc)]);
+ ins.push(['info','อัตราการออม '+sr.toFixed(1)+'% ของรายรับ'+(isP?'':' (แผน '+psr.toFixed(1)+'%)')]);
+ if(t.inc)ins.push([t.fix/t.inc>.5?'warn':'ok','ภาระรายจ่ายคงที่ '+(t.fix/t.inc*100).toFixed(1)+'% ของรายรับ'+(t.fix/t.inc>.5?' สูงกว่าเกณฑ์ 50%':' อยู่ในเกณฑ์ปลอดภัย (ไม่เกิน 50%)')]);
+ if(WD[cur]&&t.var)ins.push(['info','ค่าใช้จ่ายผันแปรเฉลี่ย ฿'+f0(t.var/WD[cur])+' ต่อวันทำงาน ('+WD[cur]+' วัน)']);
+ var bad=it.filter(function(x){return!goodK(x.k,x.d)})[0];if(bad)ins.push(['warn','“'+bad.n+'” '+(bad.k==='inc'||bad.k==='sav'?'ต่ำกว่า':'สูงกว่า')+'แผนมากที่สุด ฿'+f0(Math.abs(bad.d))]);
+ var pv=mo[mo.indexOf(cur)-1];if(!isP&&pv){var dd=t.rem-T(pv).rem;ins.push([dd>=0?'ok':'warn','เงินคงเหลือเทียบ '+M[pv]+' '+(dd>=0?'เพิ่มขึ้น':'ลดลง')+' ฿'+f0(Math.abs(dd))])}
+ var ic={ok:'✓',warn:'!',info:'i'};
+ h+='<div class="og c11"><div class="card"><div class="ch"><h2>รายการที่เบี่ยงเบนจากแผนมากที่สุด</h2><small>'+(isP?'':M[cur])+'</small></div>'+(it.length?dvRows(it):'<div class="empty">'+(isP?'เลือกเดือนเพื่อดูรายการที่ต่างจากแผน':'ไม่มีรายการที่ต่างจากแผน')+'</div>')+'</div>'
+ +'<div class="card"><div class="ch"><h2>ข้อสังเกตอัตโนมัติ</h2><small>'+M[cur]+'</small></div><ul class="ins">'+ins.map(function(x){return'<li><span class="ic '+x[0]+'">'+ic[x[0]]+'</span><span>'+x[1]+'</span></li>'}).join('')+'</ul></div></div>';
+ h+='<div class="card"><div class="ch"><h2>ตารางสรุปเทียบแผน (บาท)</h2><small>ผลต่าง = '+(isP?'-':M[cur]+' − แผน')+'</small></div><div class="scroll"><table class="t2"><thead><tr><th>หมวด</th><th>แผน</th>'+nm.map(function(n){return'<th>'+n+'</th>'}).join('')+'<th>ผลต่าง</th></tr></thead><tbody>'
+ +KK.map(function(k){var d=t[k]-P[k];return'<tr class="'+(k==='rem'?'tt':'')+'"><td><i class="dt" style="background:var('+CL[k]+')"></i>'+KN[k]+'</td><td>'+f0(P[k])+'</td>'+mo.map(function(i){return'<td'+(i===cur?' class="cs"':'')+'>'+f0(T(i)[k])+'</td>'}).join('')+'<td style="color:'+(isP||Math.abs(d)<.5?'var(--muted)':(goodK(k,d)?'var(--good)':'var(--bad)'))+'">'+(isP?'–':(d>0?'+':d<0?'−':'')+f0(Math.abs(d)))+'</td></tr>'}).join('')+'</tbody></table></div></div>';
+ document.getElementById('ovr').innerHTML=h}
+
+function sigs(){var a=[];for(var i=0;i<12;i++)a.push(G.map(function(g){return g.r.reduce(function(s,r){return s+(typeof r[i+1]==='number'?r[i+1]:0)},0)}).join('|')+'#'+(WD[i]||''));return a}
+function latestMonth(){for(var i=11;i>=1;i--)if(T(i))return i;return 0}
+var PSIG=null,PULLED=false;
+function autoCur(){var sg=sigs();if(!PSIG){cur=latestMonth()}else{var ch=0;for(var i=1;i<12;i++)if(sg[i]!==PSIG[i]&&T(i))ch=i;if(ch>0)cur=ch}PSIG=sg}
 function draw(){
- [].forEach.call(tabs.children,function(b,i){b.className=i===cur?'on':''});
- var t=T(cur),p=T(0);
- var items=[['inc','รายรับรวม'],['sav','เงินออม'],['fix','รายจ่ายคงที่'],['var','รายจ่ายผันแปร'],['rem','เงินคงเหลือ']];
- document.getElementById('kpis').innerHTML=items.map(function(x){var k=x[0];
-  return'<div class="card kpi" style="--c:var('+CL[k]+')"><div class="l">'+x[1]+'</div><div class="v'+(t[k]<0?' neg':'')+'">฿'+f0(t[k])+'</div>'+(cur===0?'<span class="d">ตามแผน</span>':delta(k,t[k],p[k]))+'</div>'}).join('');
- var parts=[['sav','เงินออม'],['fix','รายจ่ายคงที่'],['var','รายจ่ายผันแปร'],['rem','เงินคงเหลือ']].map(function(x){return[x[0],x[1],Math.max(0,t[x[0]])]});
- var sum=parts.reduce(function(a,x){return a+x[2]},0),acc=0,stops=[];
- parts.forEach(function(x){var s=acc/sum*100;acc+=x[2];stops.push('var('+CL[x[0]]+') '+s+'% '+acc/sum*100+'%')});
- var d=document.getElementById('donut');d.style.background='conic-gradient('+stops.join(',')+')';
- d.innerHTML='<b>'+Math.round(Math.max(0,t.rem)/sum*100)+'%<small>เงินคงเหลือ</small></b>';
- document.getElementById('leg').innerHTML=parts.map(function(x){return'<div style="--c:var('+CL[x[0]]+')"><i class="dot"></i>'+x[1]+'<span class="p">'+(x[2]/sum*100).toFixed(1)+'%</span></div>'}).join('');
- var mx=Math.max.apply(null,['inc','sav','fix','var'].map(function(k){return Math.max(t[k],p[k])}));
- document.getElementById('bars').innerHTML=['inc','sav','fix','var'].map(function(k,j){
-  var nm=G[j].n;
-  return'<div class="bar" style="--c:var('+CL[k]+')"><div class="t"><b>'+nm+'</b><span>฿'+f0(t[k])+'</span></div>'
-  +(cur===0?'':'<div class="k">แผน ฿'+f0(p[k])+'</div><div class="track"><div class="fill plan" style="width:'+p[k]/mx*100+'%"></div></div><div class="k">'+M[cur]+'</div>')
-  +'<div class="track"><div class="fill" style="width:'+t[k]/mx*100+'%"></div></div></div>'}).join('');
+ if(!T(cur)){cur=0;for(var q=11;q>=1;q--)if(T(q)){cur=q;break}}
+ tabs.innerHTML='';[0].concat(M.map(function(_,i){return i}).filter(function(i){return i>0&&T(i)})).forEach(function(i){var b=document.createElement('button'),s1=document.createElement('span'),s2=document.createElement('small'),ti=T(i);b.className=i===cur?'on':'';s1.textContent=M[i];s2.textContent=i===0?'ตัวเลขแผน':'เหลือ ฿'+f0(ti?ti.rem:0);b.appendChild(s1);b.appendChild(s2);b.onclick=function(){cur=i;draw()};tabs.appendChild(b)});
+ drawOv();
  table();
 }
 function table(){
- var h='<thead><tr><th>รายการ</th>'+M.map(function(m,i){var tg=i===0?['ตัวเลขแผน','p']:(i<3?['ใช้จ่ายจริง','a']:['ยังไม่มีข้อมูล','n']);return'<th'+(i===cur?' class="hl"':'')+'>'+m+'<div class="tag '+tg[1]+'">'+tg[0]+'</div></th>'}).join('')+'</tr></thead><tbody>';
+ var h='<thead><tr><th>รายการ</th>'+M.map(function(m,i){var tg=i===0?['ตัวเลขแผน','p']:(T(i)?['ใช้จ่ายจริง','a']:['ยังไม่มีข้อมูล','n']);return'<th'+(i===cur?' class="hl"':'')+'>'+m+'<div class="tag '+tg[1]+'">'+tg[0]+'</div></th>'}).join('')+'</tr></thead><tbody>';
  function cells(fn,cls){return M.map(function(_,i){var v=fn(i);return'<td class="'+(i===cur?'hl ':'')+(v===null||v===undefined?'na':(v<0?'neg':''))+'">'+f(v)+'</td>'}).join('')}
  h+='<tr class="wd"><td>Working Day (วัน)</td>'+(editMode?M.map(function(_,i){return i===0?'<td class="na">–</td>':'<td class="'+(i===cur?'hl':'')+'"><span class="ed" contenteditable="true" inputmode="numeric" data-wd="1" data-c="'+i+'">'+(typeof WD[i]==='number'?WD[i]:'')+'</span></td>'}).join(''):cells(function(i){return WD[i]}))+'</tr>';
  G.forEach(function(g,gi){
@@ -180,7 +276,7 @@ tbl.addEventListener('focusout',function(e){var el=e.target,d=el.dataset;if(!d||
  var old=wd?WD[+d.c]:(d.c==='n'?r[0]:r[+d.c+1]),nv;
  if(d.c==='n'){nv=el.textContent.trim()||'รายการใหม่'}else{var t=el.textContent.replace(/,/g,'').trim(),n=parseFloat(t);nv=(t===''||isNaN(n))?null:n}
  var rt=e.relatedTarget,nx=rt&&rt.dataset&&rt.dataset.c!==undefined?rt.dataset:null;
- if(nv!==old){if(wd)WD[+d.c]=nv;else if(d.c==='n')r[0]=nv;else r[+d.c+1]=nv;
+ if(nv!==old){if(wd)WD[+d.c]=nv;else if(d.c==='n')r[0]=nv;else r[+d.c+1]=nv;if(d.c!=='n'&&+d.c>0&&T(+d.c))cur=+d.c;if(PSIG)PSIG=sigs();
   if(SHEET){var row=wd?2:r.sr,col=d.c==='n'?'A':String.fromCharCode(66+(+d.c));sheetSet(col+row,d.c==='n'?(r.ind?'   ':'')+nv:(nv===null?'':nv))}else save();
   draw()}
  if(nx){var q=tbl.querySelector(nx.wd!==undefined?'[data-wd="1"][data-c="'+nx.c+'"]':'[data-g="'+nx.g+'"][data-ri="'+nx.ri+'"][data-c="'+nx.c+'"]');if(q)q.focus()}});
@@ -207,9 +303,16 @@ function api(action,body){var p;
  return p.catch(function(){throw{code:'network',message:''}}).then(parseRes)}
 function delBtn(gi,ri){var a=armed===gi+'|'+ri;return'<button class="del'+(a?' arm':'')+'" data-del="'+gi+'" data-ri="'+ri+'" title="ลบแถว" aria-label="ลบแถว">'+(a?'ยืนยันลบ?':TRASH)+'</button>'}
 function hhmm(){try{return new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})}catch(e){return''}}
-function setSync(k,m){var s=document.getElementById('sync');s.className='sync '+k;document.getElementById('syncmsg').textContent=m;document.getElementById('refresh').style.display=ready()?'':'none'}
+function setSync(k,m){mirror(k,m);var s=document.getElementById('sync');s.className='sync '+k;document.getElementById('syncmsg').textContent=m;document.getElementById('refresh').style.display=ready()?'':'none'}
 function num(x){if(x===undefined||x===null)return null;x=String(x).replace(/,/g,'').trim();if(x===''||x==='-')return null;var n=parseFloat(x);return isNaN(n)?null:n}
-function parse(v){var ng=GK.map(function(k,i){return{k:k,n:GNm[i],r:[]}}),wd=[null],gi=-1,row1=v[1]||[];
+var THM=['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+function fmtHead(h){if(h===undefined||h===null||h==='')return'';var d=null;
+ if(typeof h==='number'&&h>20000&&h<80000)d=new Date((h-25569)*864e5);
+ else if(typeof h==='string'&&/^\d{4}-\d\d-\d\dT/.test(h))d=new Date(h);
+ if(d&&!isNaN(d))return THM[d.getUTCMonth()]+' '+String((d.getUTCFullYear()+543)%100);
+ return String(h).trim()}
+function parse(v){var ng=GK.map(function(k,i){return{k:k,n:GNm[i],r:[]}}),wd=[null],gi=-1,row1=v[1]||[],hd=v[0]||[];
+ for(var k=0;k<12;k++){var hh=fmtHead(hd[k+1]);if(hh)M[k]=hh}
  for(var i=1;i<12;i++)wd.push(num(row1[i+1]));
  for(var r=2;r<v.length;r++){var row=v[r]||[],raw=row[0]===undefined?'':String(row[0]),nm=raw.trim(),empty=row.slice(1).every(function(c){return c===''||c===undefined||c===null});
   var hi=GNm.indexOf(nm);
@@ -222,11 +325,11 @@ function parse(v){var ng=GK.map(function(k,i){return{k:k,n:GNm[i],r:[]}}),wd=[nu
  ng.forEach(function(g){if(!g.hdr||!g.sum||!g.r.length)throw{code:'bad_shape',message:'โครงสร้างชีตไม่ตรงกับที่คาดไว้ (หมวด '+g.n+')'}});
  return{g:ng,wd:wd}}
 function handleErr(e){var c=e&&e.code,m=(e&&e.message)||'';
- var t={network:'เชื่อมต่อ Apps Script ไม่ได้ ตรวจสอบ URL และอินเทอร์เน็ต',bad_response:'Apps Script ตอบกลับผิดรูปแบบ ตรวจสอบว่า Deploy เป็น Web app และตั้งเข้าถึงเป็น “Anyone”',unauthorized:'Token ไม่ถูกต้อง กด ⚙ ตั้งค่าเพื่อใส่ใหม่',no_token:'ฝั่ง Apps Script ยังไม่ได้ตั้ง token (รัน setupToken)',bad_shape:m||'โครงสร้างชีตไม่ตรงกับที่คาดไว้',cell_has_formula:'เซลล์นี้เป็นสูตร แก้ไขไม่ได้',server_error:'Apps Script แจ้งข้อผิดพลาด: '+m.slice(0,140),bad_request:'คำขอไม่ถูกต้อง: '+m.slice(0,140)}[c];
+ var t={network:'เชื่อมต่อ Apps Script ไม่ได้ ตรวจสอบว่า URL เป็นแบบ Web app ลงท้าย /exec และ Deploy ตั้ง Who has access เป็น Anyone (ไม่ใช่ Anyone with Google account)',bad_response:'Apps Script ตอบกลับผิดรูปแบบ ตรวจสอบว่า Deploy เป็น Web app และตั้งเข้าถึงเป็น “Anyone”',unauthorized:'Token ไม่ถูกต้อง ไปที่แท็บ “ตั้งค่า” เพื่อใส่ใหม่',no_token:'ฝั่ง Apps Script ยังไม่ได้ตั้ง token (รัน setupToken)',bad_shape:m||'โครงสร้างชีตไม่ตรงกับที่คาดไว้',cell_has_formula:'เซลล์นี้เป็นสูตร แก้ไขไม่ได้',server_error:'Apps Script แจ้งข้อผิดพลาด: '+m.slice(0,140),bad_request:'คำขอไม่ถูกต้อง: '+m.slice(0,140)}[c];
  setSync('err',(t||'เกิดข้อผิดพลาด ('+(c||'unknown')+')')+(SHEET?'':' · แสดงข้อมูลสำรองในเบราว์เซอร์'))}
 function pull(quiet,keep){if(!ready())return Promise.resolve();if(!quiet)setSync('busy','กำลังดึงข้อมูลจาก Google Sheet…');
  return api('read').then(function(res){if(!Array.isArray(res.values))throw{code:'bad_shape',message:'อ่านข้อมูลจากชีตไม่ได้'};
-  var o=parse(res.values);G=o.g;WD=o.wd;SHEET=true;draw();if(!keep)setSync('ok','เชื่อมต่อ Google Sheet แล้ว · อัปเดตล่าสุด '+hhmm());return true}).catch(function(e){handleErr(e);return false})}
+  var o=parse(res.values);G=o.g;WD=o.wd;SHEET=true;if(!PULLED){PSIG=null;PULLED=true}autoCur();draw();if(!keep)setSync('ok','เชื่อมต่อ Google Sheet แล้ว · อัปเดตล่าสุด '+hhmm());return true}).catch(function(e){handleErr(e);return false})}
 function enq(fn,after){pend++;setSync('busy','กำลังบันทึกลง Google Sheet…');
  Q=Q.then(fn).then(function(){pend--;return after?after():null}).then(function(){if(!pend)setSync('ok','บันทึกลง Google Sheet แล้ว · '+hhmm())},function(e){pend--;handleErr(e);return pull(true,true)});return Q}
 function sheetSet(a1,val){enq(function(){return api('setCell',{a1:a1,value:val})})}
@@ -236,18 +339,26 @@ function addRowSheet(gi){var g=G[gi];
  enq(function(){return api('addRow',{hdr:g.hdr,sum:g.sum})},function(){return pull(true,true).then(function(){setEdit(true);draw();focusLast(gi)})})}
 function delRowSheet(gi,ri){var g=G[gi],r=g.r[ri];if(g.r.filter(function(x){return!x.h}).length<=1){setSync('err','ต้องเหลืออย่างน้อย 1 แถวต่อหมวด');return}
  enq(function(){return api('delRow',{row:r.sr})},function(){return pull(true,true)})}
-function showCfg(on){var c=document.getElementById('cfg');c.style.display=on?'':'none';if(on){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token}}
+function showCfg(on){if(on){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token;showPage('set')}else showPage('ov')}
 function initSheet(){loadCfg();
- document.getElementById('gear').onclick=function(){showCfg(document.getElementById('cfg').style.display==='none')};
  document.getElementById('refresh').onclick=function(){if(!pend)pull(false)};
  document.getElementById('cfgsave').onclick=function(){CFG.url=document.getElementById('cfgurl').value.trim();CFG.token=document.getElementById('cfgtok').value.trim();saveCfg();SHEET=false;
   if(!ready()){setSync('','กรอก URL และ Token ให้ครบ');return}pull(false).then(function(ok){if(ok)showCfg(false)})};
  document.getElementById('cfgclr').onclick=function(){CFG={url:'',token:''};saveCfg();SHEET=false;load();draw();showCfg(true);setSync('','ตัดการเชื่อมต่อแล้ว · แสดงข้อมูลสำรองในเบราว์เซอร์')};
  setInterval(function(){if(ready()&&SHEET&&!pend&&!document.hidden){var a=document.activeElement;if(a&&a.dataset&&a.dataset.c!==undefined)return;pull(true)}},60000);
- if(!ready()){setSync('','ยังไม่ได้เชื่อม Google Sheet · กด ⚙ ตั้งค่า เพื่อใส่ Web App URL และ Token (ตอนนี้แสดงข้อมูลสำรองในเบราว์เซอร์)');showCfg(true);return Promise.resolve()}
+ if(!ready()){setSync('','ยังไม่ได้เชื่อม Google Sheet · ไปที่แท็บ “ตั้งค่า” ที่แถบด้านข้างเพื่อใส่ Web App URL และ Token (ตอนนี้แสดงข้อมูลสำรองในเบราว์เซอร์)');showCfg(true);return Promise.resolve()}
  return pull(false)}
 
-norm();load();draw();initSheet();
+function mirror(k,m){var d=document.getElementById('sdot'),t=document.getElementById('sstat'),c=document.getElementById('cfgstat'),cm=document.getElementById('cfgmsg');
+ if(d)d.className='sd '+k;
+ if(t)t.textContent=({ok:'เชื่อมต่อ Google Sheet แล้ว',busy:'กำลังซิงค์…',err:'มีข้อผิดพลาดในการเชื่อมต่อ'})[k]||'ยังไม่ได้เชื่อมต่อ';
+ if(c)c.className='sync '+k;if(cm)cm.textContent=m}
+function showPage(p){if(p==='set'&&typeof CFG!=='undefined'&&document.getElementById('cfgurl')){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token}document.getElementById('pg-ov').hidden=p!=='ov';document.getElementById('pg-plan').hidden=p!=='plan';document.getElementById('pg-set').hidden=p!=='set';
+ [].forEach.call(document.querySelectorAll('.nv'),function(b){b.className='nv'+(b.dataset.pg===p?' on':'')});window.scrollTo(0,0)}
+[].forEach.call(document.querySelectorAll('.nv'),function(b){b.onclick=function(){showPage(b.dataset.pg)}});
+var cr=document.getElementById('cfgrefresh');if(cr)cr.onclick=function(){if(!pend)pull(false)};
+
+norm();load();autoCur();draw();initSheet();
 </script>
 </body>
 </html>
