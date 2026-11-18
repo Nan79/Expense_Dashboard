@@ -124,6 +124,13 @@ tr.i td:first-child{padding-left:32px}
 .it tr.tt td{font-weight:700;background:var(--head)}.it tr.tt2 td{font-weight:600;color:var(--good)}
 .wn{display:flex;gap:6px}.wn .pen{margin:0;padding:3px 10px}
 .kc .cr .pb{margin-top:2px}
+.gold{margin-bottom:14px;background:linear-gradient(135deg,rgba(224,138,0,.10),transparent 60%),var(--card)}
+.gwrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:6px 0 10px}
+.gp{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}.gl{color:var(--muted);font-size:.8rem}.gv{font-size:1.35rem;font-weight:700;margin:2px 0}.gs{color:var(--muted);font-size:.78rem}
+.alloc{display:flex;height:22px;border-radius:8px;overflow:hidden;background:var(--head);margin:14px 0 4px}.alloc b{display:block;height:100%}
+.tg{display:inline-block;font-size:.7rem;padding:1px 8px;border-radius:999px;font-weight:600}.tg.g{background:rgba(224,138,0,.15);color:var(--fix)}.tg.s{background:rgba(47,109,246,.13);color:var(--sav)}
+.pxi{width:100px;padding:4px 6px;border-radius:6px;border:1px solid var(--line);background:var(--bg);color:var(--text);font:inherit;text-align:right}
+.dn{color:var(--bad)}.iv td,.iv th{white-space:nowrap}.iv td:first-child{white-space:normal}
 .pen.on{background:var(--sav);border-color:var(--sav);color:#fff}
 .add+.add{margin-left:6px}
 .add.on{background:var(--c);color:var(--card)}
@@ -151,6 +158,7 @@ thead th:nth-child(2),tbody td:nth-child(2){border-right:2px solid var(--muted)}
 <button class="nv on" data-pg="ov"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg> ภาพรวม</button>
 <button class="nv" data-pg="plan"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg> แผนงบการเงิน</button>
 <button class="nv" data-pg="inst"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg> ตารางการผ่อน</button>
+<button class="nv" data-pg="inv"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg> การลงทุน</button>
 <button class="nv" data-pg="set"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg> ตั้งค่า</button>
 <div class="sfoot"><span class="sd" id="sdot"></span><span id="sstat">ตรวจสอบการเชื่อมต่อ…</span></div></aside>
 <main class="wrap">
@@ -178,6 +186,23 @@ thead th:nth-child(2),tbody td:nth-child(2){border-right:2px solid var(--muted)}
 <div id="f-err" class="note" style="color:var(--bad)"></div>
 <div class="cfgb"><button id="f-save" class="pen on">บันทึก</button><button id="f-cancel" class="pen">ยกเลิก</button></div></div>
 <div id="inst"></div>
+</section>
+<section id="pg-inv" hidden>
+<header><div><h1>การลงทุน</h1><div class="sub">บันทึกการลงทุนในทองและหุ้น ติดตามต้นทุน มูลค่า และกำไร/ขาดทุน · เก็บข้อมูลในแท็บ “การลงทุน” ของ Google Sheet</div></div>
+<div class="ia"><button id="ivadd" class="pen on">+ บันทึกการลงทุน</button></div></header>
+<div class="card" id="ivform" hidden style="margin-bottom:14px"><h2 id="ivft">บันทึกการลงทุน</h2><div class="fg">
+<label class="fl">วันที่<input id="iv-d" type="date"></label>
+<label class="fl">ประเภท<select id="iv-t"><option>ทอง</option><option>หุ้น</option></select></label>
+<label class="fl">รายการ / สัญลักษณ์<input id="iv-n" list="iv-dl" autocomplete="off" placeholder="เช่น ทองคำแท่ง 96.5% หรือ PTT"><datalist id="iv-dl"></datalist></label>
+<label class="fl">ฝั่ง<select id="iv-s"><option>ซื้อ</option><option>ขาย</option></select></label>
+<label class="fl">จำนวนเงิน (บาท)<input id="iv-a" type="number" min="0" step="any" inputmode="decimal"></label>
+<label class="fl">ราคาต่อหน่วย (บาท) · ไม่บังคับ<input id="iv-p" type="number" min="0" step="any" inputmode="decimal"></label>
+<label class="fl" id="iv-ul">น้ำหนัก (บาททอง) · ไม่บังคับ<input id="iv-u" type="number" min="0" step="any" inputmode="decimal"></label>
+<label class="fl">ค่าธรรมเนียม (บาท) · ไม่บังคับ<input id="iv-f" type="number" min="0" step="any" inputmode="decimal"></label>
+<label class="fl">หมายเหตุ<input id="iv-o" autocomplete="off"></label></div>
+<div id="iv-err" class="note" style="color:var(--bad)"></div>
+<div class="cfgb"><button id="iv-save" class="pen on">บันทึกลงชีต</button><button id="iv-cancel" class="pen">ยกเลิก</button></div></div>
+<div id="inv"></div>
 </section>
 <section id="pg-set" hidden>
 <header><div><h1>ตั้งค่า</h1><div class="sub">การเชื่อมต่อกับ Google Sheet ผ่าน Apps Script Web App</div></div></header>
@@ -384,7 +409,7 @@ function mirror(k,m){var d=document.getElementById('sdot'),t=document.getElement
  if(d)d.className='sd '+k;
  if(t)t.textContent=({ok:'เชื่อมต่อ Google Sheet แล้ว',busy:'กำลังซิงค์…',err:'มีข้อผิดพลาดในการเชื่อมต่อ'})[k]||'ยังไม่ได้เชื่อมต่อ';
  if(c)c.className='sync '+k;if(cm)cm.textContent=m}
-function showPage(p){if(p==='set'&&typeof CFG!=='undefined'&&document.getElementById('cfgurl')){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token}document.getElementById('pg-ov').hidden=p!=='ov';document.getElementById('pg-plan').hidden=p!=='plan';document.getElementById('pg-set').hidden=p!=='set';document.getElementById('pg-inst').hidden=p!=='inst';
+function showPage(p){if(p==='set'&&typeof CFG!=='undefined'&&document.getElementById('cfgurl')){document.getElementById('cfgurl').value=CFG.url;document.getElementById('cfgtok').value=CFG.token}document.getElementById('pg-ov').hidden=p!=='ov';document.getElementById('pg-plan').hidden=p!=='plan';document.getElementById('pg-set').hidden=p!=='set';document.getElementById('pg-inst').hidden=p!=='inst';document.getElementById('pg-inv').hidden=p!=='inv';if(p==='inv')ivEnter();
  [].forEach.call(document.querySelectorAll('.nv'),function(b){b.className='nv'+(b.dataset.pg===p?' on':'')});window.scrollTo(0,0)}
 [].forEach.call(document.querySelectorAll('.nv'),function(b){b.onclick=function(){showPage(b.dataset.pg)}});
 var cr=document.getElementById('cfgrefresh');if(cr)cr.onclick=function(){if(!pend)pull(false)};
@@ -469,6 +494,91 @@ function instPull(){if(!ready())return Promise.resolve();
   else{IT=r.items.map(normItem);try{localStorage.setItem('fin-inst',JSON.stringify({it:IT,w:IWIN}))}catch(e){}}
  }).then(function(){renderInst()},function(e){ISYNC=false;handleErr(e)})}
 iload();
+
+var IV={tx:[],px:[],ids:{},loaded:false,loading:false,err:'',flt:'all',edit:0,arm:0,next:2,pxNext:2},IVS='การลงทุน',IPS='ราคาล่าสุด',GB='ทองคำแท่ง 96.5%',GO='ทองรูปพรรณ 96.5%';
+function todayS(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2)}
+function ivDate(s){s=String(s==null?'':s).trim();if(/^\d{4}-\d{2}-\d{2}$/.test(s))return s;var m=/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.exec(s);if(m){var y=+m[3];if(y>2400)y-=543;return y+'-'+('0'+m[2]).slice(-2)+'-'+('0'+m[1]).slice(-2)}return''}
+function dL(d){if(!d)return'–';var p=d.split('-');return +p[2]+' '+THM[+p[1]-1]+' '+String((+p[0]+543)%100)}
+function ivLoad(){if(!ready()){IV.err='noconn';ivRender();return Promise.resolve()}
+ IV.loading=true;IV.err='';ivRender();
+ return api('invRead').then(function(r){IV.tx=(r.tx||[]).map(function(x){return{row:x.id,id:x.id,d:ivDate(x.d),t:x.t,n:x.n,side:x.side==='ขาย'?'ขาย':'ซื้อ',amt:Number(x.amt)||0,px:Number(x.px)||null,u:Number(x.u)||null,fee:Number(x.fee)||0,note:x.note||''}});
+  IV.px=(r.px||[]).map(function(q){return{n:q.n,p:Number(q.p)||null,b:Number(q.b)||null,d:ivDate(q.d)}});IV.loaded=true;IV.loading=false;ivRender()}).catch(function(e){IV.loading=false;IV.err=(e&&e.code)||'x';IV.msg=(e&&e.message)||'';ivRender()})}
+function ivEnter(){if(!IV.loading)ivLoad()}
+function ivPersist(){enq(function(){return api('invSave',{items:IV.tx.map(function(x){return{id:x.id,d:x.d,t:x.t,n:x.n,side:x.side,amt:x.amt,px:x.px,u:x.u,fee:x.fee,note:x.note}})})})}
+function pxOf(n){return IV.px.filter(function(q){return q.n===n})[0]||null}
+function ivCalc(){var it={},mm={},real=0,cm=todayS().slice(0,7),buyM=0,cntM=0;
+ IV.tx.slice().sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:a.row-b.row}).forEach(function(x){var k=x.t+'|'+x.n,h=it[k]||(it[k]={t:x.t,n:x.n,u:0,cost:0,unk:0,warn:false});
+  if(x.side==='ซื้อ'){var c=x.amt+x.fee;h.cost+=c;if(x.u>0)h.u+=x.u;else h.unk+=c;var m=x.d.slice(0,7);if(m){mm[m]=mm[m]||{ทอง:0,หุ้น:0};mm[m][x.t==='ทอง'?'ทอง':'หุ้น']+=c;if(m===cm){buyM+=c;cntM++}}}
+  else{var pr=x.amt-x.fee,cu=h.cost-h.unk,avg=h.u>0?cu/h.u:0;if(x.u>0&&h.u>0){var su=Math.min(x.u,h.u);h.cost-=avg*su;h.u-=su;real+=pr-avg*su}else{h.cost-=pr;h.warn=true}}});
+ var rows=[],tc=0,mv=0,pc=0,tcu=0;
+ Object.keys(it).forEach(function(k){var h=it[k];if(h.u<=1e-9&&h.unk<=0)return;var q=pxOf(h.n),pr=q?(q.b>0?q.b:q.p):null,cu=h.cost-h.unk,v=(pr&&h.u>0)?h.u*pr:null;h.pr=pr;h.src=q&&!(q.b>0)&&h.t==='ทอง'?'ขาย':'';h.mv=v;h.avg=h.u>0?cu/h.u:null;h.pl=(v!==null&&!h.unk)?v-cu:null;tc+=h.cost;if(h.pl!==null){mv+=v;pc+=h.pl;tcu+=cu}rows.push(h)});
+ rows.sort(function(a,b){return b.cost-a.cost});
+ return{rows:rows,mm:mm,real:real,tc:tc,mv:mv,pl:pc,tcu:tcu,buyM:buyM,cntM:cntM}}
+function ivBars(mm){var ks=Object.keys(mm).sort().slice(-12);if(!ks.length)return'<div class="empty">ยังไม่มีข้อมูลการลงทุน</div>';
+ var W=520,H=220,pl=40,pr=8,pt=16,pb=26,iw=W-pl-pr,ih=H-pt-pb,mx=Math.max.apply(null,ks.map(function(k){return mm[k]['ทอง']+mm[k]['หุ้น']}).concat([1])),gw=iw/ks.length,bw=Math.min(40,gw*.66),o='<svg class="ch-svg" viewBox="0 0 '+W+' '+H+'">';
+ for(var g=0;g<=4;g++){var yy=pt+ih*(1-g/4);o+='<line x1="'+pl+'" x2="'+(W-pr)+'" y1="'+yy+'" y2="'+yy+'" stroke="var(--line)"/><text x="'+(pl-6)+'" y="'+(yy+4)+'" text-anchor="end" font-size="10" fill="var(--muted)">'+fm(mx*g/4)+'</text>'}
+ ks.forEach(function(k,i){var cx=pl+gw*i+gw/2,yb=pt+ih,p=k.split('-');[['ทอง','var(--fix)'],['หุ้น','var(--sav)']].forEach(function(q){var v=mm[k][q[0]],h=ih*v/mx;if(!v)return;yb-=h;o+='<rect x="'+(cx-bw/2)+'" y="'+yb+'" width="'+bw+'" height="'+Math.max(h-1,1)+'" rx="2" fill="'+q[1]+'"><title>'+q[0]+' · '+THM[+p[1]-1]+' '+((+p[0]+543)%100)+' · '+f0(v)+'</title></rect>'});
+  var t=mm[k]['ทอง']+mm[k]['หุ้น'];o+='<text x="'+cx+'" y="'+(yb-4)+'" text-anchor="middle" font-size="10" fill="var(--text)">'+fm(t)+'</text><text x="'+cx+'" y="'+(H-8)+'" text-anchor="middle" font-size="10" fill="var(--muted)">'+THM[+p[1]-1]+' '+((+p[0]+543)%100)+'</text>'});
+ return o+'</svg>'}
+function ivPxSave(name,sell,buy){var q=pxOf(name);if(q){q.p=sell;q.b=buy;q.d=todayS()}else IV.px.push({n:name,p:sell,b:buy,d:todayS()});ivRender();return enq(function(){return api('pxSave',{name:name,sell:sell,buy:buy})})}
+function ivRender(){var box=document.getElementById('inv');if(!box)return;
+ if(IV.loading&&!IV.loaded){box.innerHTML='<div class="card"><div class="empty">กำลังโหลดข้อมูลการลงทุนจาก Google Sheet…</div></div>';return}
+ if(IV.err){var t=IV.err==='noconn'?'ยังไม่ได้เชื่อม Google Sheet ไปที่แท็บ “ตั้งค่า” เพื่อใส่ Web App URL และ Token':IV.err==='bad_action'?'Apps Script ยังเป็นเวอร์ชันเก่า (ไม่รองรับการลงทุน) วางโค้ด Code.gs ใหม่แล้ว Deploy แบบ New version':'โหลดข้อมูลไม่สำเร็จ'+(IV.err==='x'?'':' ('+IV.err+')')+(IV.msg?': '+esc(String(IV.msg).slice(0,140)):'')+' · ลองใหม่อีกครั้ง หรือตรวจการตั้งค่าในแท็บ “ตั้งค่า”';
+  box.innerHTML='<div class="card"><div class="empty">'+t+'</div><div class="cfgb"><button class="pen on" id="ivretry">ลองใหม่</button></div></div>';return}
+ var c=ivCalc(),bar=pxOf(GB),orn=pxOf(GO),td=todayS(),days=function(q){return q&&q.d?Math.round((new Date(td)-new Date(q.d))/864e5):null};
+ var dd=Math.max(days(bar)===null?-1:days(bar),days(orn)===null?-1:days(orn)),stale=(days(bar)!==null?days(bar):days(orn));
+ var gH=c.rows.filter(function(h){return h.t==='ทอง'}),gU=gH.reduce(function(a,h){return a+h.u},0),gMv=gH.reduce(function(a,h){return a+(h.mv||0)},0),gCost=gH.reduce(function(a,h){return a+h.cost},0);
+ function pb(l,q){return'<div class="gp"><div class="gl">'+l+'</div><div class="gv">ขายออก ฿'+(q&&q.p?f(q.p):'–')+'</div><div class="gs">รับซื้อ '+(q&&q.b?'฿'+f(q.b):'ยังไม่ได้กรอก')+'</div></div>'}
+ var h='<div class="card gold"><div class="ch"><h2>🪙 ราคาทองคำวันนี้</h2><small>ราคาที่บันทึกไว้ · อัปเดตล่าสุด '+dL((bar&&bar.d)||(orn&&orn.d)||'')+(stale===null?'':(stale>0?' · <b class="dn">ราคาเก่า '+stale+' วัน</b>':' · วันนี้'))+'</small></div>'
+ +'<div class="gwrap">'+pb('ทองคำแท่ง 96.5% (บาทละ)',bar)+pb('ทองรูปพรรณ 96.5% (บาทละ)',orn)
+ +'<div class="gp"><div class="gl">ทองที่ถืออยู่</div><div class="gv">'+(gU?f(Math.round(gU*10000)/10000)+' บาททอง':'–')+'</div><div class="gs">'+(gU?'มูลค่า ฿'+f0(gMv)+' · ต้นทุน ฿'+f0(gCost):'ยังไม่มีรายการลงทุนทอง')+'</div></div></div>'
+ +'<div class="cfgb"><button class="pen on" id="ivpxb">แก้ไขราคาทอง</button></div>'
+ +'<div class="note">ราคามาจากแท็บ “ราคาล่าสุด” ในชีต กรอกราคาล่าสุดเองด้วยปุ่ม “แก้ไขราคาทอง” (ไม่ดึงราคาจากเว็บภายนอก) · มูลค่าทองคิดจากราคารับซื้อ ถ้าไม่ได้กรอกจะใช้ราคาขายออกแทน</div>'
+ +'<div class="cfgb" id="ivpxf" hidden><label class="fl">แท่ง ขายออก<input id="px-bs" type="number" step="any" value="'+(bar&&bar.p||'')+'"></label><label class="fl">แท่ง รับซื้อ<input id="px-bb" type="number" step="any" value="'+(bar&&bar.b||'')+'"></label><label class="fl">รูปพรรณ ขายออก<input id="px-os" type="number" step="any" value="'+(orn&&orn.p||'')+'"></label><label class="fl">รูปพรรณ รับซื้อ<input id="px-ob" type="number" step="any" value="'+(orn&&orn.b||'')+'"></label><button class="pen on" id="ivpxs">บันทึกราคา</button></div></div>';
+ var plC=c.pl>=0?'var(--good)':'var(--bad)',ret=c.tcu?c.pl/c.tcu*100:null;
+ var K=[['ต้นทุนรวมที่ถืออยู่','฿'+f0(c.tc),'<span class="chip">'+c.rows.length+' รายการ</span>','ทอง + หุ้น','--sav'],
+ ['มูลค่าตลาดปัจจุบัน','฿'+f0(c.mv),'<span class="chip">ตามราคาล่าสุด</span>',c.mv?'เฉพาะรายการที่มีราคาและจำนวนหน่วย':'ยังไม่มีราคา/จำนวนหน่วย','--rem'],
+ ['กำไร/ขาดทุน (ยังไม่รับรู้)',(c.pl>=0?'+':'−')+'฿'+f0(Math.abs(c.pl)),ret===null?'<span class="chip">–</span>':'<span class="chip '+(c.pl>=0?'up':'dn')+'">'+(c.pl>=0?'▲ ':'▼ ')+Math.abs(ret).toFixed(1)+'%</span>','กำไรที่รับรู้แล้ว '+(c.real>=0?'+':'−')+'฿'+f0(Math.abs(c.real)),'--good'],
+ ['ลงทุนเดือนนี้','฿'+f0(c.buyM),'<span class="chip">'+c.cntM+' ครั้ง</span>','ยอดซื้อรวมค่าธรรมเนียม','--fix'],
+ ['สัดส่วนทอง',(c.mv||c.tc?Math.round(((gMv||gCost)/((c.mv||c.tc)||1))*100):0)+'%','<span class="chip">ที่เหลือคือหุ้น</span>',c.mv?'คิดจากมูลค่าตลาด':'คิดจากต้นทุน','--var']];
+ h+='<div class="og k5">'+K.map(function(k,i){return'<div class="kc" style="--c:var('+k[4]+')"><div class="l">'+k[0]+'</div><div class="v"'+(i===2?' style="color:'+plC+'"':'')+'>'+k[1]+'</div><div class="cr">'+k[2]+'</div><div class="r">'+k[3]+'</div></div>'}).join('')+'</div>';
+ var gAmt=c.mv?gMv:gCost,tAmt=c.mv?c.mv:c.tc,sAmt=Math.max(tAmt-gAmt,0);
+ h+='<div class="og c21"><div class="card"><div class="ch"><h2>เงินลงทุนรายเดือน</h2><small>ยอดซื้อ ทอง vs หุ้น (12 เดือนล่าสุด)</small></div>'+ivBars(c.mm)+'<div class="lg"><span style="--c:var(--fix)"><i></i>ทอง</span><span style="--c:var(--sav)"><i></i>หุ้น</span></div></div>'
+ +'<div class="card"><div class="ch"><h2>สัดส่วนพอร์ต</h2><small>'+(c.mv?'ตามมูลค่าตลาด':'ตามต้นทุน')+'</small></div>'+(tAmt?'<div class="alloc"><b style="width:'+(gAmt/tAmt*100)+'%;background:var(--fix)"></b><b style="width:'+(sAmt/tAmt*100)+'%;background:var(--sav)"></b></div><div class="lg"><span style="--c:var(--fix)"><i></i>ทอง ฿'+f0(gAmt)+' ('+Math.round(gAmt/tAmt*100)+'%)</span><span style="--c:var(--sav)"><i></i>หุ้น ฿'+f0(sAmt)+' ('+Math.round(sAmt/tAmt*100)+'%)</span></div>':'<div class="empty">ยังไม่มีข้อมูล</div>')+'</div></div>';
+ h+='<div class="card"><div class="ch"><h2>สรุปพอร์ตที่ถืออยู่</h2><small>ต้นทุนเฉลี่ยถ่วงน้ำหนัก</small></div><div class="scroll"><table class="it iv"><thead><tr><th>รายการ</th><th>จำนวนหน่วย</th><th>ต้นทุนเฉลี่ย/หน่วย</th><th>ต้นทุนรวม</th><th>ราคาปัจจุบัน</th><th>มูลค่า</th><th>กำไร/ขาดทุน</th></tr></thead><tbody>'
+ +(c.rows.length?c.rows.map(function(r){var auto=r.n===GB||r.n===GO;return'<tr><td><span class="tg '+(r.t==='ทอง'?'g':'s')+'">'+esc(r.t)+'</span> <b>'+esc(r.n)+'</b>'+(r.unk?'<small>มีรายการที่ไม่ได้ระบุจำนวนหน่วย</small>':'')+(r.warn?'<small>มีการขายที่ไม่ได้ระบุจำนวนหน่วย</small>':'')+'</td><td>'+(r.u?f(Math.round(r.u*10000)/10000):'–')+'</td><td>'+(r.avg!==null?f(r.avg):'–')+'</td><td>'+f0(r.cost)+'</td><td>'+(auto?(r.pr?f(r.pr)+(r.src?'<small>ใช้ราคาขายออก</small>':''):'–'):'<input class="pxi" data-pxn="'+esc(r.n)+'" type="number" step="any" value="'+(r.pr||'')+'" placeholder="กรอกราคา">')+'</td><td>'+(r.mv!==null?f0(r.mv):'–')+'</td><td style="color:'+(r.pl===null?'var(--muted)':(r.pl>=0?'var(--good)':'var(--bad)'))+'">'+(r.pl===null?'–':(r.pl>=0?'+':'−')+f0(Math.abs(r.pl))+' ('+(r.cost-r.unk?(r.pl/(r.cost-r.unk)*100).toFixed(1):'0')+'%)')+'</td></tr>'}).join(''):'<tr><td colspan="7" class="empty">ยังไม่มีรายการที่ถืออยู่ กด “+ บันทึกการลงทุน” เพื่อเริ่มต้น</td></tr>')
+ +'</tbody></table></div><div class="note">ราคาปัจจุบันของหุ้นกรอกเองในช่องราคา (บันทึกลงแท็บ “ราคาล่าสุด”) · กำไร/ขาดทุนคำนวณเมื่อมีราคาและจำนวนหน่วยครบ</div></div>';
+ var L=IV.tx.filter(function(x){return IV.flt==='all'||x.t===IV.flt}).sort(function(a,b){return a.d<b.d?1:a.d>b.d?-1:b.row-a.row}),sb=0,ss=0;L.forEach(function(x){if(x.side==='ซื้อ')sb+=x.amt;else ss+=x.amt});
+ h+='<div class="card" style="margin-top:14px"><div class="ch"><h2>บันทึกการลงทุน</h2><div class="wn">'+[['all','ทั้งหมด'],['ทอง','ทอง'],['หุ้น','หุ้น']].map(function(f){return'<button class="pen'+(IV.flt===f[0]?' on':'')+'" data-flt="'+f[0]+'">'+f[1]+'</button>'}).join('')+'</div></div><div class="scroll"><table class="it iv"><thead><tr><th>วันที่</th><th>ประเภท</th><th>รายการ</th><th>ฝั่ง</th><th>จำนวนเงิน</th><th>ราคา/หน่วย</th><th>หน่วย</th><th>ค่าธรรมเนียม</th><th>หมายเหตุ</th><th></th></tr></thead><tbody>'
+ +(L.length?L.map(function(x){return'<tr><td>'+dL(x.d)+'</td><td><span class="tg '+(x.t==='ทอง'?'g':'s')+'">'+esc(x.t)+'</span></td><td>'+esc(x.n)+'</td><td style="color:'+(x.side==='ซื้อ'?'var(--good)':'var(--bad)')+'">'+x.side+'</td><td>'+f(x.amt)+'</td><td>'+(x.px?f(x.px):'–')+'</td><td>'+(x.u?f(x.u):'–')+'</td><td>'+(x.fee?f(x.fee):'–')+'</td><td>'+esc(x.note)+'</td><td class="ac"><button class="del" data-ive="'+x.row+'" title="แก้ไข" aria-label="แก้ไข">✎</button><button class="del'+(IV.arm===x.row?' arm':'')+'" data-ivd="'+x.row+'" title="ลบ" aria-label="ลบ">'+(IV.arm===x.row?'ยืนยันลบ?':TRASH)+'</button></td></tr>'}).join(''):'<tr><td colspan="10" class="empty">ยังไม่มีรายการ</td></tr>')
+ +(L.length?'<tr class="tt"><td colspan="4">รวม (ซื้อ / ขาย)</td><td colspan="6" style="text-align:left">ซื้อ ฿'+f0(sb)+' · ขาย ฿'+f0(ss)+'</td></tr>':'')+'</tbody></table></div><div class="note">ข้อมูลทั้งหมดเก็บในแท็บ “การลงทุน” ของ Google Sheet</div></div>';
+ box.innerHTML=h}
+function ivOpen(row){IV.edit=row||0;var x=row?IV.tx.filter(function(q){return q.row===row})[0]:null,g=function(i){return document.getElementById(i)};
+ g('ivft').textContent=x?'แก้ไขรายการลงทุน':'บันทึกการลงทุน';g('iv-d').value=x?x.d:todayS();g('iv-t').value=x?x.t:'ทอง';g('iv-n').value=x?x.n:GB;g('iv-s').value=x?x.side:'ซื้อ';g('iv-a').value=x?x.amt:'';g('iv-p').value=x&&x.px?x.px:'';g('iv-u').value=x&&x.u?x.u:'';g('iv-f').value=x&&x.fee?x.fee:'';g('iv-o').value=x?x.note:'';
+ ivType();g('iv-err').textContent='';g('ivform').hidden=false;g('iv-a').focus()}
+function ivType(){var t=document.getElementById('iv-t').value,dl=document.getElementById('iv-dl');document.getElementById('iv-ul').firstChild.textContent=t==='ทอง'?'น้ำหนัก (บาททอง) · ไม่บังคับ':'จำนวนหุ้น · ไม่บังคับ';
+ var names=t==='ทอง'?[GB,GO]:[];IV.tx.forEach(function(x){if(x.t===t&&names.indexOf(x.n)<0)names.push(x.n)});dl.innerHTML=names.map(function(n){return'<option value="'+esc(n)+'">'}).join('')}
+function ivSave(){var g=function(i){return document.getElementById(i)},d=g('iv-d').value,n=g('iv-n').value.trim(),a=parseFloat(g('iv-a').value),er=g('iv-err');
+ if(!/^\d{4}-\d{2}-\d{2}$/.test(d)||!n||!(a>0)){er.textContent='กรอกวันที่ ชื่อรายการ และจำนวนเงิน (มากกว่า 0)';return}
+ var px=parseFloat(g('iv-p').value),u=parseFloat(g('iv-u').value),fee=parseFloat(g('iv-f').value);
+ var rec={d:d,t:g('iv-t').value,n:n,side:g('iv-s').value,amt:a,px:px>0?px:null,u:u>0?u:null,fee:fee>0?fee:0,note:g('iv-o').value.trim()};
+ if(IV.edit){var x=IV.tx.filter(function(q){return q.row===IV.edit})[0];if(x)for(var kk in rec)x[kk]=rec[kk]}
+ else{var id=Date.now();rec.id=id;rec.row=id;IV.tx.push(rec)}
+ g('ivform').hidden=true;ivPersist();ivRender()}
+document.getElementById('ivadd').onclick=function(){ivOpen(0)};
+document.getElementById('iv-cancel').onclick=function(){document.getElementById('ivform').hidden=true};
+document.getElementById('iv-save').onclick=ivSave;
+document.getElementById('iv-t').onchange=function(){var t=this.value;document.getElementById('iv-n').value=t==='ทอง'?GB:'';ivType()};
+['iv-a','iv-p','iv-u'].forEach(function(id){document.getElementById(id).onchange=function(){var g=function(i){return parseFloat(document.getElementById(i).value)},a=g('iv-a'),p=g('iv-p'),u=g('iv-u');
+ if(a>0&&p>0&&!(u>0))document.getElementById('iv-u').value=Math.round(a/p*10000)/10000;else if(p>0&&u>0&&!(a>0))document.getElementById('iv-a').value=Math.round(p*u*100)/100}});
+document.getElementById('pg-inv').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var d=b.dataset;
+ if(b.id==='ivretry')ivLoad();
+ else if(b.id==='ivpxb'){var f=document.getElementById('ivpxf');f.hidden=!f.hidden}
+ else if(b.id==='ivpxs'){var v=function(i){var x=parseFloat(document.getElementById(i).value);return x>0?x:null};ivPxSave(GB,v('px-bs'),v('px-bb'));ivPxSave(GO,v('px-os'),v('px-ob'))}
+ else if(d.flt){IV.flt=d.flt;ivRender()}
+ else if(d.ive){ivOpen(+d.ive)}
+ else if(d.ivd){var r=+d.ivd;if(IV.arm!==r){IV.arm=r;ivRender();setTimeout(function(){if(IV.arm===r){IV.arm=0;ivRender()}},3500);return}IV.arm=0;IV.tx=IV.tx.filter(function(x){return x.row!==r});ivPersist();ivRender()}});
+document.getElementById('pg-inv').addEventListener('change',function(e){var t=e.target;if(t.dataset&&t.dataset.pxn!==undefined){var v=parseFloat(t.value);ivPxSave(t.dataset.pxn,v>0?v:null,null)}});
 
 norm();load();autoCur();draw();initSheet();
 </script>
